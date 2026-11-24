@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Genora Property – Final v2</title>
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;family=Noto+Sans+Tamil:wght@500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#183060}a:hover{color:#0E1F42}
+.rw{position:relative;display:inline-block;white-space:nowrap}
+.rope{position:absolute;left:-2%;bottom:-0.14em;width:104%;height:0.32em;overflow:visible}
+.rope path{fill:none;stroke:#5B8DEF;stroke-width:3.2;stroke-linecap:round;stroke-dasharray:240;stroke-dashoffset:240;animation:gDraw 1.4s .4s ease-out forwards}
+@keyframes gDraw{to{stroke-dashoffset:0}}
+@keyframes gScroll{to{transform:translateX(-50%)}}
+.gmq{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
+.gtrack{display:flex;width:max-content;animation:gScroll 48s linear infinite}
+.gtrack.rev{animation-direction:reverse}
+.gtrack.fast{animation-duration:30s}
+.gmq:hover .gtrack{animation-play-state:paused}
+.gcard{transition:transform .25s ease, box-shadow .25s ease}
+.gcard:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(24,48,96,.18)}
+@keyframes gRise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@supports (animation-timeline: view()){.grise{animation:gRise linear both;animation-timeline:view();animation-range:entry 0% entry 55%}}
+@keyframes gGrow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.gprog{transform:scaleX(0);transform-origin:left}
+@supports (animation-timeline: scroll()){.gprog{animation:gGrow linear both;animation-timeline:scroll(root)}}
+@keyframes gPulse{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.7);opacity:0}}
+.gwa-ring{animation:gPulse 2s ease-out infinite}
+@keyframes gGlow{0%,100%{opacity:.16}50%{opacity:.28}}
+.gmark-glow{animation:gGlow 5s ease-in-out infinite}
+
+.gdrop{animation:gDrop 24s cubic-bezier(.2,.8,.3,1.15) infinite both}
+.gpop{animation:gPop 24s ease-out infinite both;transform-box:fill-box;transform-origin:50% 100%}
+.gscene{animation:gScene 24s linear infinite both}
+.gcap{animation:gScene 24s linear infinite both}
+@keyframes gDrop{0%{opacity:0;transform:translateY(-150px)}2.6%{opacity:1;transform:translateY(0)}33%{opacity:1;transform:translateY(0)}34%,100%{opacity:0;transform:translateY(0)}}
+@keyframes gPop{0%{opacity:0;transform:scale(.4)}2%{opacity:1;transform:scale(1)}33%{opacity:1;transform:scale(1)}34%,100%{opacity:0}}
+@keyframes gScene{0%{opacity:1}32%{opacity:1}33.3%,100%{opacity:0}}
+@keyframes gFlow{to{stroke-dashoffset:-40}}
+.gflow{stroke-dasharray:10 10;animation:gFlow 1.6s linear infinite}
+@keyframes gRay{0%,100%{opacity:.35}50%{opacity:1}}
+.gray{animation:gRay 3s ease-in-out infinite}
+@keyframes gAura{0%,100%{transform:scale(.9);opacity:.5}50%{transform:scale(1.08);opacity:1}}
+.gaura{animation:gAura 4s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+@media (prefers-reduced-motion: reduce){.gdrop,.gpop,.gscene,.gcap,.gflow,.gray,.gaura{animation:none}.gscene:not(:first-child),.gcap:not(:first-child){display:none}}
+
+.gln{stroke-dasharray:1;stroke-dashoffset:1;animation:gLine 24s ease-out infinite both}
+@keyframes gLine{0%{stroke-dashoffset:1}6%{stroke-dashoffset:0}33%{stroke-dashoffset:0}33.6%,100%{stroke-dashoffset:1}}
+.gfill{opacity:0;animation:gFillIn 24s ease-out infinite both}
+@keyframes gFillIn{0%{opacity:0}4%{opacity:1}33%{opacity:1}33.6%,100%{opacity:0}}
+@media (prefers-reduced-motion: reduce){.gln{animation:none;stroke-dashoffset:0}.gfill{animation:none;opacity:1}}
+@media (prefers-reduced-motion: reduce){.gtrack,.grise,.gwa-ring,.gmark-glow,.rope path{animation:none}.rope path{stroke-dashoffset:0}}
+</style>
+</helmet>
+<div style="font-family: Lexend, sans-serif; color: #14142B; background: #CFDDF2; padding: 16px; min-height: 100vh">
+
+<div class="gprog" style="position: fixed; top: 0; left: 0; right: 0; height: 3px; background: #3D6FD6; z-index: 40"></div>
+
+<div style="max-width: 1320px; margin: 0 auto; background: #FFFFFF; border-radius: 32px; overflow: hidden; box-shadow: 0 2px 0 rgba(24,48,96,.04)">
+<header style="position: sticky; top: 0; z-index: 30">
+<div style="background: rgba(255,255,255,.96); border-bottom: 1px solid #E1E6F0; padding: 12px 24px 12px 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; ">
+<a href="#" style="display: block"><img src="./assets/1491ad33b33fcd90ecfb506a5d58a7be.png" alt="Genora Property – Positive Aura Homes for Generations" style="height: 46px; width: auto; display: block"></a>
+<nav style="display: flex; flex-wrap: wrap; align-items: center; gap: 6px; font-size: 14px; font-weight: 500">
+<a href="#how" style="color: #183060; text-decoration: none; padding: 10px 14px">How we build</a>
+<a href="#homes" style="color: #183060; text-decoration: none; padding: 10px 14px">The 15 homes</a>
+<a href="#proof" style="color: #183060; text-decoration: none; padding: 10px 14px">Track record</a>
+<a href="#visit" style="background: #183060; color: #FFFFFF; text-decoration: none; font-weight: 600; padding: 12px 22px; border-radius: 999px">Book a site visit</a>
+</nav>
+</div>
+</header>
+
+<main style="display: flex; flex-direction: column; gap: 24px; padding-bottom: 24px">
+
+<section style="padding: 64px 56px 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 48px; align-items: center">
+<div style="display: flex; flex-direction: column; gap: 24px">
+<span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 10px; background: #E9EFF8; color: #183060; font-size: 13px; font-weight: 500; padding: 8px 14px; border-radius: 999px"><img src="./assets/41b970a3de2550dab169fb95c6561075.png" alt="" aria-hidden="true" style="height: 16px; width: auto">Vastu-correct homes · [LOCATION], Chennai</span>
+<h1 style="margin: 0; font-weight: 600; font-size: 60px; line-height: 1.1; letter-spacing: -0.02em; color: #183060">Homes with a <span class="rw">positive aura,<svg class="rope" viewBox="0 0 200 14" preserveAspectRatio="none" aria-hidden="true"><path d="M2 9 C 40 3, 80 13, 120 7 S 180 4, 198 8"></path></svg></span><br>built for generations.</h1>
+<p style="margin: 0; max-width: 500px; font-size: 18px; font-weight: 300; line-height: 1.65; color: #4A4E66">Fifteen vastu-correct homes, planned so fresh air flows through and sunlight reaches every room. Now under construction — come and see.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px">
+<a href="#visit" style="background: #183060; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 16px; padding: 16px 28px; border-radius: 999px">Book a free site visit →</a>
+<a href="https://wa.me/91XXXXXXXXXX?text=Hi%20Genora!%20I%27d%20like%20details%20about%20the%2015%20homes." style="display: inline-flex; align-items: center; gap: 8px; border: 1.5px solid #183060; color: #183060; text-decoration: none; font-weight: 500; font-size: 16px; padding: 15px 24px; border-radius: 999px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13.5 7.8L3 21l1.3-4.4A9 9 0 1 1 21 12z"></path></svg>WhatsApp us</a>
+</div>
+<p style="margin: 0; font-size: 14px; color: #4A4E66"><b style="color: #183060">[APPROVAL] approved · Clear title.</b> Documents shared before you pay anything.</p>
+</div>
+<div style="position: relative; display: flex; flex-direction: column; gap: 14px">
+<div style="position: relative; background: #FFFFFF; border: 1px solid #DCE4F1; border-radius: 28px; padding: 22px 18px 14px; overflow: hidden">
+<div style="display: flex; justify-content: space-between; align-items: center; padding: 0 8px 8px">
+<img src="./assets/1491ad33b33fcd90ecfb506a5d58a7be.png" alt="Genora Property – Positive Aura Homes for Generations" style="height: 58px; width: auto; display: block">
+<span style="font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #8FA6CF">Design sheet · [PROJECT NAME]</span>
+</div>
+<svg viewBox="0 0 600 420" style="width: 100%; height: auto; display: block" role="img" aria-label="Architect drawings of a home, a villa and an apartment building with a tower crane, drawing themselves line by line"><defs><pattern id="gGrid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0 H0 V20" fill="none" stroke="#E6ECF5" stroke-width="1"></path></pattern></defs><rect x="0" y="0" width="600" height="420" fill="url(#gGrid)"></rect><g class="gscene" style="animation-delay:0s"><path class="gfill" style="animation-delay:3.20s" d="M180 222 H420 V340 H180 Z" fill="#EAF0FA"></path><path class="gfill" style="animation-delay:3.40s" d="M160 222 L300 140 L440 222 Z" fill="#DCE6F5"></path><path class="gln" pathLength="1" style="animation-delay:0.20s" d="M0 340 H600" fill="none" stroke="#8FA6CF" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path><path class="gln" pathLength="1" style="animation-delay:0.50s" d="M180 340 V222 H420 V340" fill="none" stroke="#183060" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path><path class="gln" pathLength="1" style="animation-delay:1.20s" d="M160 222 L300 140 L440 222 Z" fill="none" stroke="#183060" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path><path class="gln" pathLength="1" style="animation-delay:1.60s" d="M372 196 V160 H392 V184" fill="none" stroke="#183060" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path><path class="gln" pathLength="1" style="animation-delay:1.90s" d="M285 340 V280 H315 V340 M309 312 H311" fill="none" stroke="#183060" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path><path class="gln" pathLength="1" style="animation-delay:2.20s" d="M205 250 H255 V290 H205 Z M230 250 V290 M205 270 H255" fill="none" stroke="#183060" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path><path class="gln" pathLength="1" style="animation-delay:2.20s" d="M345 250 H395 V290 H345 Z M370 250 V290 M345 270 H395" fill="none" stroke="#183060" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path><path class="gln" pathLength="1" style="animation-delay:2.60s" d="M270 340 V346 H330 V340" fill="none" stroke="#183060" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path><path class="gln" pathLength="1" style="animation-delay:2.40s" d="M500 340 V300" fill="none" stroke="#8FA6CF" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path><path class="gln" pathLength="1" style="animation-delay:2.60s" d="M500 304 C 474 300, 476 262, 500 258 C 524 262, 526 300, 500 304 Z" fill="none" stroke="#8FA6CF" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path><path class="gln" pathLength="1" style="animation-delay:2.70s" d="M92 340 V300" fill="none" stroke="#8FA6CF" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path><path class="gln" pathLength="1" style="animation-delay:2.90s" d="M92 304 C 66 300, 68 262, 92 258 C 116 262, 118 300, 92 304 Z" fill="none" stroke="#8FA6CF" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path><path class="gln" pathLength="1" style="animation-delay:2.90s" d="M180 364 H420 M180 359 V369 M420 359 V369" fill="none" stroke="#8FA6CF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"></path><text class="gfill" style="animation-delay:3.30s" x="300.0" y="380" text-anchor="middle" font-family="Lexend, sans-serif" font-size="10" letter-spacing="1.5" fill="#8FA6CF">12.0 M</text><text class="gfill" style="animation-delay:0.30s" x="30" y="40" text-anchor="start" font-family="Lexend, sans-serif" font-size="10" letter-spacing="1.5" fill="#8FA6CF">ELEVATION — INDEPENDENT HOME</text></g><g class="gscene" style="animation-delay:8s"><path class="gfill" style="animation-delay:11.40s" d="M140 252 H460 V340 H140 Z" fill="#EAF0FA"></path><path class="gfill" style="animation-delay:11.50s" d="M200 178 H420 V246 H200 Z" fill="#EAF0FA"></path><path class="gln" pathLength="1" style="animation-delay:8.20s" d="M0 340 H600" fill="none" stroke="#8FA6CF" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path><path class="gln" pathLength="1" style="animation-delay:8.50s" d="M140 340 V252 H460 V340" fill="none" stroke="#183060" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path><path class="gln" pathLength="1" style="animation-delay:9.00s" d="M128 246 H472 V252 H128 Z" fill="none" stroke="#183060" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path><path class="gln" pathLength="1" style="animation-delay:9.30s" d="M200 246 V178 H420 V246" fill="none" stroke="#183060" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path><path class="gln" pathLength="1" style="animation-delay:9.70s" d="M188 172 H432 V178 H188 Z" fill="none" stroke="#183060" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path><path class="gln" pathLength="1" style="animation-delay:10.00s" d="M160 270 H300 V340 M183 270 V340 M206 270 V340 M230 270 V340 M253 270 V340 M277 270 V340" fill="none" stroke="#183060" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path><path class="gln" pathLength="1" style="animation-delay:10.20s" d="M370 340 V282 H410 V340 M402 312 H404" fill="none" stroke="#183060" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path><path class="gln" pathLength="1" style="animation-delay:10.40s" d="M222 196 H300 V236 H222 Z M261 196 V236 M330 196 H398 V236 H330 Z M364 196 V236" fill="none" stroke="#183060" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path><path class="gln" pathLength="1" style="animation-delay:10.60s" d="M320 246 V258 M320 252 H460" fill="none" stroke="#183060" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"></path><path class="gln" pathLength="1" style="animation-delay:10.70s" d="M40 340 V300 H128 V340 M60 300 V340 M84 300 V340 M108 300 V340" fill="none" stroke="#8FA6CF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"></path><path class="gln" pathLength="1" style="animation-delay:10.80s" d="M540 340 V300" fill="none" stroke="#8FA6CF" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path><path class="gln" pathLength="1" style="animation-delay:11.00s" d="M540 304 C 514 300, 516 262, 540 258 C 564 262, 566 300, 540 304 Z" fill="none" stroke="#8FA6CF" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path><path class="gln" pathLength="1" style="animation-delay:11.00s" d="M140 364 H460 M140 359 V369 M460 359 V369" fill="none" stroke="#8FA6CF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"></path><text class="gfill" style="animation-delay:11.40s" x="300.0" y="380" text-anchor="middle" font-family="Lexend, sans-serif" font-size="10" letter-spacing="1.5" fill="#8FA6CF">16.0 M</text><text class="gfill" style="animation-delay:8.30s" x="30" y="40" text-anchor="start" font-family="Lexend, sans-serif" font-size="10" letter-spacing="1.5" fill="#8FA6CF">ELEVATION — VILLA, G+1</text></g><g class="gscene" style="animation-delay:16s"><path class="gfill" style="animation-delay:19.60s" d="M240 110 H380 V340 H240 Z" fill="#EAF0FA"></path><path class="gln" pathLength="1" style="animation-delay:16.20s" d="M0 340 H600" fill="none" stroke="#8FA6CF" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path><path class="gln" pathLength="1" style="animation-delay:16.50s" d="M240 340 V110 H380 V340" fill="none" stroke="#183060" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path><path class="gln" pathLength="1" style="animation-delay:16.90s" d="M240 140 H380" fill="none" stroke="#183060" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"></path><path class="gln" pathLength="1" style="animation-delay:17.02s" d="M240 173 H380" fill="none" stroke="#183060" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"></path><path class="gln" pathLength="1" style="animation-delay:17.14s" d="M240 206 H380" fill="none" stroke="#183060" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"></path><path class="gln" pathLength="1" style="animation-delay:17.26s" d="M240 239 H380" fill="none" stroke="#183060" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"></path><path class="gln" pathLength="1" style="animation-delay:17.38s" d="M240 272 H380" fill="none" stroke="#183060" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"></path><path class="gln" pathLength="1" style="animation-delay:17.50s" d="M240 305 H380" fill="none" stroke="#183060" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"></path><path class="gln" pathLength="1" style="animation-delay:17.62s" d="M240 338 H380" fill="none" stroke="#183060" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"></path><path class="gln" pathLength="1" style="animation-delay:17.60s" d="M252 117 h22 v14 h-22 Z M286 117 h22 v14 h-22 Z M320 117 h22 v14 h-22 Z M354 117 h16 v14 h-16 Z" fill="none" stroke="#183060" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"></path><path class="gln" pathLength="1" style="animation-delay:17.70s" d="M252 150 h22 v14 h-22 Z M286 150 h22 v14 h-22 Z M320 150 h22 v14 h-22 Z M354 150 h16 v14 h-16 Z" fill="none" stroke="#183060" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"></path><path class="gln" pathLength="1" style="animation-delay:17.80s" d="M252 183 h22 v14 h-22 Z M286 183 h22 v14 h-22 Z M320 183 h22 v14 h-22 Z M354 183 h16 v14 h-16 Z" fill="none" stroke="#183060" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"></path><path class="gln" pathLength="1" style="animation-delay:17.90s" d="M252 216 h22 v14 h-22 Z M286 216 h22 v14 h-22 Z M320 216 h22 v14 h-22 Z M354 216 h16 v14 h-16 Z" fill="none" stroke="#183060" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"></path><path class="gln" pathLength="1" style="animation-delay:18.00s" d="M252 249 h22 v14 h-22 Z M286 249 h22 v14 h-22 Z M320 249 h22 v14 h-22 Z M354 249 h16 v14 h-16 Z" fill="none" stroke="#183060" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"></path><path class="gln" pathLength="1" style="animation-delay:18.10s" d="M252 282 h22 v14 h-22 Z M286 282 h22 v14 h-22 Z M320 282 h22 v14 h-22 Z M354 282 h16 v14 h-16 Z" fill="none" stroke="#183060" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"></path><path class="gln" pathLength="1" style="animation-delay:18.20s" d="M252 315 h22 v14 h-22 Z M286 315 h22 v14 h-22 Z M320 315 h22 v14 h-22 Z M354 315 h16 v14 h-16 Z" fill="none" stroke="#183060" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"></path><path class="gln" pathLength="1" style="animation-delay:17.00s" d="M462 340 V70 M478 340 V70" fill="none" stroke="#183060" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path><path class="gln" pathLength="1" style="animation-delay:17.40s" d="M462 340 L478 322 L462 304 L478 286 L462 268 L478 250 L462 232 L478 214 L462 196 L478 178 L462 160 L478 142 L462 124 L478 106 L462 88 L478 70" fill="none" stroke="#183060" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"></path><path class="gln" pathLength="1" style="animation-delay:18.00s" d="M330 70 H590 M330 80 H590 M330 80 L590 70" fill="none" stroke="#183060" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path><path class="gln" pathLength="1" style="animation-delay:18.30s" d="M330 80 L350 70 L370 80 L390 70 L410 80 L430 70 L450 80 L470 70 L490 80 L510 70 L530 80 L550 70 L570 80 L590 70" fill="none" stroke="#183060" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"></path><path class="gln" pathLength="1" style="animation-delay:18.50s" d="M470 70 V44 M470 44 L340 70 M470 44 L590 70" fill="none" stroke="#183060" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"></path><path class="gln" pathLength="1" style="animation-delay:18.60s" d="M590 70 V96 H570 V70" fill="none" stroke="#183060" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path><path class="gln" pathLength="1" style="animation-delay:18.70s" d="M482 82 H500 V100 H482 Z" fill="none" stroke="#183060" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path><path class="gln" pathLength="1" style="animation-delay:18.90s" d="M360 80 V170 M352 170 H368 L364 178 H356 Z" fill="none" stroke="#183060" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"></path><path class="gln" pathLength="1" style="animation-delay:19.10s" d="M336 178 H384 V196 H336 Z" fill="none" stroke="#8FA6CF" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path><path class="gln" pathLength="1" style="animation-delay:19.20s" d="M240 364 H380 M240 359 V369 M380 359 V369" fill="none" stroke="#8FA6CF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"></path><text class="gfill" style="animation-delay:19.60s" x="310.0" y="380" text-anchor="middle" font-family="Lexend, sans-serif" font-size="10" letter-spacing="1.5" fill="#8FA6CF">G + 6</text><text class="gfill" style="animation-delay:16.30s" x="30" y="40" text-anchor="start" font-family="Lexend, sans-serif" font-size="10" letter-spacing="1.5" fill="#8FA6CF">ELEVATION — APARTMENTS, G+6</text></g></svg>
+<div style="position: relative; height: 26px; margin-top: 6px; font-size: 15px; color: #4A4E66"><span class="gcap" style="animation-delay:0s; position: absolute; left: 0; right: 0; top: 0; text-align: center">Line by line — <b>an independent home.</b></span><span class="gcap" style="animation-delay:8s; position: absolute; left: 0; right: 0; top: 0; text-align: center">Floor by floor — <b>a villa.</b></span><span class="gcap" style="animation-delay:16s; position: absolute; left: 0; right: 0; top: 0; text-align: center">Slab by slab — <b>an apartment.</b></span></div>
+</div>
+<div style="align-self: flex-start; margin-left: 24px; margin-top: -40px; position: relative; background: #FFFFFF; border-radius: 18px; padding: 14px 18px; display: flex; align-items: center; gap: 12px; box-shadow: 0 14px 32px rgba(24,48,96,.14)">
+<span style="font-size: 13px; line-height: 1.45; color: #4A4E66"><b style="display: block; font-size: 15px; color: #183060">[X] of 15 homes available</b>From ₹[PRICE] · [APPROVAL] approved</span>
+</div>
+</div>
+</section>
+
+<section class="grise" style="margin: 0 24px; background: #F0F5FC; border-radius: 24px; padding: 28px 36px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px">
+<div style="display: flex; flex-direction: column; gap: 4px; border-left: 3px solid #3D6FD6; padding-left: 18px"><span style="font-size: 34px; font-weight: 600; color: #183060">15</span><span style="font-size: 14px; color: #4A4E66">independent homes</span></div>
+<div style="display: flex; flex-direction: column; gap: 4px; border-left: 3px solid #3D6FD6; padding-left: 18px"><span style="font-size: 34px; font-weight: 600; color: #183060">₹[PRICE]</span><span style="font-size: 14px; color: #4A4E66">starting price</span></div>
+<div style="display: flex; flex-direction: column; gap: 4px; border-left: 3px solid #3D6FD6; padding-left: 18px"><span style="font-size: 34px; font-weight: 600; color: #183060">[APPROVAL]</span><span style="font-size: 14px; color: #4A4E66">approved · clear title</span></div>
+<div style="display: flex; flex-direction: column; gap: 4px; border-left: 3px solid #3D6FD6; padding-left: 18px"><span style="font-size: 34px; font-weight: 600; color: #183060">[MONTH YEAR]</span><span style="font-size: 14px; color: #4A4E66">planned handover</span></div>
+</section>
+
+<section class="grise" style="background: #FFFFFF; padding: 90px 40px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 28px">
+<img src="./assets/41b970a3de2550dab169fb95c6561075.png" alt="" aria-hidden="true" style="width: 64px; height: auto">
+<p style="margin: 0; max-width: 900px; font-size: 48px; font-weight: 500; line-height: 1.25; letter-spacing: -0.015em; color: #183060">Most homes are built fast. Sold faster.<br><span style="color: #9AA3BC">And forgotten before the paint dries.</span></p>
+<p style="margin: 0; max-width: 560px; font-size: 18px; font-weight: 300; line-height: 1.65; color: #4A4E66">Most builders ask you to trust the brochure. <b style="font-weight: 600; color: #183060">Genora asks you to watch the work.</b></p>
+</section>
+
+<section class="grise" style="margin: 0 24px; background: #F0F5FC; border-radius: 28px; padding: 72px 48px; display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 48px; align-items: center">
+<div style="display: flex; flex-direction: column; gap: 22px">
+<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #2F5BB7">Why "Positive Aura"</span>
+<h2 style="margin: 0; font-size: 44px; font-weight: 600; line-height: 1.12; letter-spacing: -0.015em; color: #183060">Every Genora home is <span class="rw">vastu-correct.<svg class="rope" viewBox="0 0 200 14" preserveAspectRatio="none" aria-hidden="true"><path d="M2 9 C 40 3, 80 13, 120 7 S 180 4, 198 8"></path></svg></span> From the land up.</h2>
+<p style="margin: 0; font-size: 17px; font-weight: 300; line-height: 1.7; color: #4A4E66">[OWNER NAME] has one rule: he buys only land that is vastu-correct. Then every home is planned so fresh air comes in and flows out, and sunlight reaches inside. The result is a home that feels light, fresh and calm — positive energy, every day.</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px">
+<div style="background: #FFFFFF; border-radius: 18px; padding: 18px"><p style="margin: 0 0 6px; font-size: 15px; font-weight: 600; color: #183060">Vastu-correct land</p><p style="margin: 0; font-size: 13px; line-height: 1.55; color: #4A4E66">Chosen before anything is built.</p></div>
+<div style="background: #FFFFFF; border-radius: 18px; padding: 18px"><p style="margin: 0 0 6px; font-size: 15px; font-weight: 600; color: #183060">Air that flows</p><p style="margin: 0; font-size: 13px; line-height: 1.55; color: #4A4E66">In one side, out the other.</p></div>
+<div style="background: #FFFFFF; border-radius: 18px; padding: 18px"><p style="margin: 0 0 6px; font-size: 15px; font-weight: 600; color: #183060">Sunlight inside</p><p style="margin: 0; font-size: 13px; line-height: 1.55; color: #4A4E66">Bright rooms, through the day.</p></div>
+</div>
+</div>
+<div style="position: relative"><svg viewBox="0 0 440 400" style="width: 100%; height: auto; display: block" role="img" aria-label="Plan of a home showing sunlight entering and air flowing through">
+<g font-family="Lexend, sans-serif" font-size="12" fill="#4A4E66">
+<text x="220" y="22" text-anchor="middle" font-weight="600" fill="#183060">N</text>
+<path d="M220 30 L214 44 L220 40 L226 44 Z" fill="#183060"></path>
+</g>
+<rect x="110" y="90" width="220" height="220" rx="10" fill="#FFFFFF" stroke="#183060" stroke-width="3"></rect>
+<line x1="220" y1="90" x2="220" y2="190" stroke="#B8C8E4" stroke-width="2"></line>
+<line x1="110" y1="190" x2="330" y2="190" stroke="#B8C8E4" stroke-width="2"></line>
+<line x1="260" y1="190" x2="260" y2="310" stroke="#B8C8E4" stroke-width="2"></line>
+<rect x="196" y="306" width="48" height="8" fill="#FFFFFF"></rect>
+<rect x="330" y="120" width="8" height="40" fill="#FFFFFF"></rect><rect x="102" y="230" width="8" height="40" fill="#FFFFFF"></rect>
+<circle cx="392" cy="70" r="22" fill="#FFD36B"></circle>
+<g stroke="#F2B533" stroke-width="3" stroke-linecap="round">
+<line class="gray" x1="372" y1="88" x2="300" y2="140"></line>
+<line class="gray" style="animation-delay:.5s" x1="376" y1="94" x2="320" y2="170"></line>
+<line class="gray" style="animation-delay:1s" x1="366" y1="84" x2="270" y2="120"></line>
+</g>
+<g fill="none" stroke="#3D6FD6" stroke-width="3" stroke-linecap="round">
+<path class="gflow" d="M20 250 C 80 250, 120 240, 170 240 S 280 160, 330 140 S 400 130, 430 120"></path>
+<path class="gflow" style="animation-delay:.4s" d="M20 275 C 90 275, 140 270, 190 262 S 300 190, 340 150 S 410 145, 430 145"></path>
+</g>
+<circle class="gaura" cx="220" cy="200" r="34" fill="#F0F5FC"></circle>
+<g font-family="Lexend, sans-serif" font-size="12" fill="#183060" font-weight="500">
+<text x="392" y="112" text-anchor="middle">Sunlight in</text>
+<text x="24" y="240">Fresh air in</text>
+<text x="352" y="104" text-anchor="start" opacity="0"></text>
+<text x="404" y="170" text-anchor="middle">Air out</text>
+</g>
+</svg><img src="./assets/41b970a3de2550dab169fb95c6561075.png" alt="" aria-hidden="true" style="position: absolute; left: 50%; top: 50%; width: 44px; height: auto; margin: -22px 0 0 -22px"></div>
+</section>
+<section id="how" style="background: #FFFFFF; padding: 72px 48px; display: flex; flex-direction: column; gap: 44px">
+<div class="grise" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 20px">
+<div style="display: flex; flex-direction: column; gap: 12px">
+<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #2F5BB7">How we build</span>
+<h2 style="margin: 0; font-size: 44px; font-weight: 600; line-height: 1.12; letter-spacing: -0.015em; color: #183060">From bare land to <span class="rw">a family's home.<svg class="rope" viewBox="0 0 200 14" preserveAspectRatio="none" aria-hidden="true"><path d="M2 9 C 40 3, 80 13, 120 7 S 180 4, 198 8"></path></svg></span></h2>
+</div>
+<p style="margin: 0; max-width: 380px; font-size: 16px; font-weight: 300; line-height: 1.6; color: #4A4E66">Three stages, all of them out in the open. You'll see each one on WhatsApp as it happens.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px">
+<div class="grise gcard" style="background: #FFFFFF; border: 1px solid #E1E6F0; border-radius: 24px; padding: 14px; display: flex; flex-direction: column; gap: 16px">
+<div style="height: 240px; border-radius: 16px; background: #F0F5FC; display: flex; align-items: flex-end; padding: 16px; box-sizing: border-box"><span style="font-size: 13px; color: #4A4E66">[Photo — the land]</span></div>
+<div style="padding: 4px 12px 14px; display: flex; flex-direction: column; gap: 12px">
+<span style="width: 40px; height: 40px; border-radius: 50%; background: #183060; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 600">01</span>
+<h3 style="margin: 0; font-size: 22px; font-weight: 600; color: #183060">Choose vastu-correct land</h3>
+<p style="margin: 0; font-size: 15px; font-weight: 300; line-height: 1.65; color: #4A4E66">Clear title and [APPROVAL] approval — and only land that is vastu-correct.</p>
+<span style="align-self: flex-start; font-size: 12px; font-weight: 600; color: #183060; background: #E9EFF8; padding: 7px 12px; border-radius: 999px">Vastu checked</span>
+</div></div>
+<div class="grise gcard" style="background: #FFFFFF; border: 1px solid #E1E6F0; border-radius: 24px; padding: 14px; display: flex; flex-direction: column; gap: 16px">
+<div style="height: 240px; border-radius: 16px; background: #F0F5FC; display: flex; align-items: flex-end; padding: 16px; box-sizing: border-box"><span style="font-size: 13px; color: #4A4E66">[Photo — construction]</span></div>
+<div style="padding: 4px 12px 14px; display: flex; flex-direction: column; gap: 12px">
+<span style="width: 40px; height: 40px; border-radius: 50%; background: #183060; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 600">02</span>
+<h3 style="margin: 0; font-size: 22px; font-weight: 600; color: #183060">Build in the open</h3>
+<p style="margin: 0; font-size: 15px; font-weight: 300; line-height: 1.65; color: #4A4E66">Every stage photographed and sent to buyers on WhatsApp. Nothing hidden behind a hoarding.</p>
+<span style="align-self: flex-start; font-size: 12px; font-weight: 600; color: #183060; background: #E9EFF8; padding: 7px 12px; border-radius: 999px">Photos at every stage</span>
+</div></div>
+<div class="grise gcard" style="background: #FFFFFF; border: 1px solid #E1E6F0; border-radius: 24px; padding: 14px; display: flex; flex-direction: column; gap: 16px">
+<div style="height: 240px; border-radius: 16px; background: #F0F5FC; display: flex; align-items: flex-end; padding: 16px; box-sizing: border-box"><span style="font-size: 13px; color: #4A4E66">[Photo — finished home]</span></div>
+<div style="padding: 4px 12px 14px; display: flex; flex-direction: column; gap: 12px">
+<span style="width: 40px; height: 40px; border-radius: 50%; background: #183060; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 600">03</span>
+<h3 style="margin: 0; font-size: 22px; font-weight: 600; color: #183060">Hand it down</h3>
+<p style="margin: 0; font-size: 15px; font-weight: 300; line-height: 1.65; color: #4A4E66">Planned for cross-ventilation and natural light. [Key build detail — materials, structure.]</p>
+<span style="align-self: flex-start; font-size: 12px; font-weight: 600; color: #183060; background: #E9EFF8; padding: 7px 12px; border-radius: 999px">[Handover promise]</span>
+</div></div>
+
+</div>
+</section>
+
+<section id="homes" style="margin: 0 24px; background: #183060; color: #FFFFFF; border-radius: 28px; padding: 80px 0; display: flex; flex-direction: column; gap: 40px; overflow: hidden; position: relative">
+<img src="./assets/41b970a3de2550dab169fb95c6561075.png" alt="" aria-hidden="true" style="position: absolute; left: -80px; bottom: -60px; width: 420px; height: auto; opacity: .12">
+<div class="grise" style="position: relative; padding: 0 56px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px">
+<div style="display: flex; flex-direction: column; gap: 12px">
+<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #9CC0FF">The homes · [LOCATION]</span>
+<h2 style="margin: 0; font-size: 60px; font-weight: 600; line-height: 1.04; letter-spacing: -0.02em">Fifteen homes.<br><span style="color: #9CC0FF">Not one more.</span></h2>
+</div>
+<p style="margin: 0; max-width: 360px; font-size: 16px; font-weight: 300; line-height: 1.6; color: #D3DCEC">Hover to pause. Tap any home to ask about it on WhatsApp — we'll reply with the plan, price and photos.</p>
+</div>
+<div class="gmq" style="position: relative"><div class="gtrack"><a class="gcard" href="https://wa.me/91XXXXXXXXXX?text=Hi%20Genora!%20Is%20Home%2001%20still%20available%3F" aria-label="Ask about Home 01 on WhatsApp" style="flex: 0 0 auto; width: 250px; margin-right: 16px; background: #FFFFFF; color: #14142B; text-decoration: none; border-radius: 22px; padding: 22px; display: flex; flex-direction: column; gap: 14px; box-sizing: border-box">
+<span style="display: flex; justify-content: space-between; align-items: center"><span style="font-size: 13px; font-weight: 500; color: #4A4E66">Home</span><span style="font-size: 12px; font-weight: 600; color: #183060; background: #E9EFF8; padding: 5px 10px; border-radius: 999px">Available</span></span>
+<span style="font-size: 52px; font-weight: 600; line-height: 1; color: #183060">01</span>
+<span style="font-size: 14px; color: #4A4E66">[SQ.FT] sq.ft · [FACING] facing</span>
+<span style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #E1E6F0; padding-top: 14px"><span style="font-size: 17px; font-weight: 600">₹[PRICE]</span><span style="font-size: 13px; font-weight: 600; color: #2F5BB7">Ask →</span></span>
+</a><a class="gcard" href="https://wa.me/91XXXXXXXXXX?text=Hi%20Genora!%20Is%20Home%2002%20still%20available%3F" aria-label="Ask about Home 02 on WhatsApp" style="flex: 0 0 auto; width: 250px; margin-right: 16px; background: #FFFFFF; color: #14142B; text-decoration: none; border-radius: 22px; padding: 22px; display: flex; flex-direction: column; gap: 14px; box-sizing: border-box">
+<span style="display: flex; justify-content: space-between; align-items: center"><span style="font-size: 13px; font-weight: 500; color: #4A4E66">Home</span><span style="font-size: 12px; font-weight: 600; color: #183060; background: #E9EFF8; padding: 5px 10px; border-radius: 999px">Available</span></span>
+<span style="font-size: 52px; font-weight: 600; line-height: 1; color: #183060">02</span>
+<span style="font-size: 14px; color: #4A4E66">[SQ.FT] sq.ft · [FACING] facing</span>
+<span style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #E1E6F0; padding-top: 14px"><span style="font-size: 17px; font-weight: 600">₹[PRICE]</span><span style="font-size: 13px; font-weight: 600; color: #2F5BB7">Ask →</span></span>
+</a><a class="gcard" href="https://wa.me/91XXXXXXXXXX?text=Hi%20Genora!%20Is%20Home%2003%20still%20available%3F" aria-label="Ask about Home 03 on WhatsApp" style="flex: 0 0 auto; width: 250px; margin-right: 16px; background: #FFFFFF; color: #14142B; text-decoration: none; border-radius: 22px; padding: 22px; display: flex; flex-direction: column; gap: 14px; box-sizing: border-box">
+<span style="display: flex; justify-content: space-between; align-items: center"><span style="font-size: 13px; font-weight: 500; color: #4A4E66">Home</span><span style="font-size: 12px; font-weight: 600; color: #183060; background: #E9EFF8; padding: 5px 10px; border-radius: 999px">Available</span></span>
+<span style="font-size: 52px; font-weight: 600; line-height: 1; color: #183060">03</span>
+<span style="font-size: 14px; color: #4A4E66">[SQ.FT] sq.ft · [FACING] facing</span>
+<span style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #E1E6F0; padding-top: 14px"><span style="font-size: 17px; font-weight: 600">₹[PRICE]</span><span style="font-size: 13px; font-weight: 600; color: #2F5BB7">Ask →</span></span>
+</a><a class="gcard" href="https://wa.me/91XXXXXXXXXX?text=Hi%20Genora!%20Is%20Home%2004%20still%20available%3F" aria-label="Ask about Home 04 on WhatsApp" style="flex: 0 0 auto; width: 250px; margin-right: 16px; background: #FFFFFF; color: #14142B; text-decoration: none; border-radius: 22px; padding: 22px; display: flex; flex-direction: column; gap: 14px; box-sizing: border-box">
+<span style="display: flex; justify-content: space-between; align-items: center"><span style="font-size: 13px; font-weight: 500; color: #4A4E66">Home</span><span style="font-size: 12px; font-weight: 600; color: #183060; background: #E9EFF8; padding: 5px 10px; border-radius: 999px">Available</span></span>
+<span style="font-size: 52px; font-weight: 600; line-height: 1; color: #183060">04</span>
+<span style="font-size: 14px; color: #4A4E66">[SQ.FT] sq.ft · [FACING] facing</span>
+<span style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #E1E6F0; padding-top: 14px"><span style="font-size: 17px; font-weight: 600">₹[PRICE]</span><span style="font-size: 13px; font-weight: 600; color: #2F5BB7">Ask →</span></span>
+</a><a class="gcard" href="https://wa.me/91XXXXXXXXXX?text=Hi%20Genora!%20Is%20Home%2005%20still%20available%3F" aria-label="Ask about Home 05 on WhatsApp" style="flex: 0 0 auto; width: 250px; margin-right: 16px; background: #FFFFFF; color: #14142B; text-decoration: none; border-radius: 22px; padding: 22px; display: flex; flex-direction: column; gap: 14px; box-sizing: border-box">
+<span style="display: flex; justify-content: space-between; align-items: center"><span style="font-size: 13px; font-weight: 500; color: #4A4E66">Home</span><span style="font-size: 12px; font-weight: 600; color: #183060; background: #E9EFF8; padding: 5px 10px; border-radius: 999px">Available</span></span>
+<span style="font-size: 52px; font-weight: 600; line-height: 1; color: #183060">05</span>
+<span style="font-size: 14px; color: #4A4E66">[SQ.FT] sq.ft · [FACING] facing</span>
+<span style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #E1E6F0; padding-top: 14px"><span style="font-size: 17px; font-weight: 600">₹[PRICE]</span><span style="font-size: 13px; font-weight: 600; color: #2F5BB7">Ask →</span></span>
+</a><a class="gcard" href="https://wa.me/91XXXXXXXXXX?text=Hi%20Genora!%20Is%20Home%2006%20still%20available%3F" aria-label="Ask about Home 06 on WhatsApp" style="flex: 0 0 auto; width: 250px; margin-right: 16px; background: #FFFFFF; color: #14142B; text-decoration: none; border-radius: 22px; padding: 22px; display: flex; flex-direction: column; gap: 14px; box-sizing: border-box">
+<span style="display: flex; justify-content: space-between; align-items: center"><span style="font-size: 13px; font-weight: 500; color: #4A4E66">Home</span><span style="font-size: 12px; font-weight: 600; color: #183060; background: #E9EFF8; padding: 5px 10px; border-radius: 999px">Available</span></span>
+<span style="font-size: 52px; font-weight: 600; line-height: 1; color: #183060">06</span>
+<span style="font-size: 14px; color: #4A4E66">[SQ.FT] sq.ft · [FACING] facing</span>
+<span style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #E1E6F0; padding-top: 14px"><span style="font-size: 17px; font-weight: 600">₹[PRICE]</span><span style="font-size: 13px; font-weight: 600; color: #2F5BB7">Ask →</span></span>
+</a><a class="gcard" href="https://wa.me/91XXXXXXXXXX?text=Hi%20Genora!%20Is%20Home%2007%20still%20available%3F" aria-label="Ask about Home 07 on WhatsApp" style="flex: 0 0 auto; width: 250px; margin-right: 16px; background: #FFFFFF; color: #14142B; text-decoration: none; border-radius: 22px; padding: 22px; display: flex; flex-direction: column; gap: 14px; box-sizing: border-box">
+<span style="display: flex; justify-content: space-between; align-items: center"><span style="font-size: 13px; font-weight: 500; color: #4A4E66">Home</span><span style="font-size: 12px; font-weight: 600; color: #183060; background: #E9EFF8; padding: 5px 10px; border-radius: 999px">Available</span></span>
+<span style="font-size: 52px; font-weight: 600; line-height: 1; color: #183060">07</span>
+<span style="font-size: 14px; color: #4A4E66">[SQ.FT] sq.ft · [FACING] facing</span>
+<span style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #E1E6F0; padding-top: 14px"><span style="font-size: 17px; font-weight: 600">₹[PRICE]</span><span style="font-size: 13px; font-weight: 600; color: #2F5BB7">Ask →</span></span>
+</a><a class="gcard" href="https://wa.me/91XXXXXXXXXX?text=Hi%20Genora!%20Is%20Home%2008%20still%20available%3F" aria-label="Ask about Home 08 on WhatsApp" style="flex: 0 0 auto; width: 250px; margin-right: 16px; background: #FFFFFF; color: #14142B; text-decoration: none; border-radius: 22px; padding: 22px; display: flex; flex-direction: column; gap: 14px; box-sizing: border-box">
+<span style="display: flex; justify-content: space-between; align-items: center"><span style="font-size: 13px; font-weight: 500; color: #4A4E66">Home</span><span style="font-size: 12px; font-weight: 600; color: #183060; background: #E9EFF8; padding: 5px 10px; border-radius: 999px">Available</span></span>
+<span style="font-size: 52px; font-weight: 600; line-height: 1; color: #183060">08</span>
+<span style="font-size: 14px; color: #4A4E66">[SQ.FT] sq.ft · [FACING] facing</span>
+<span style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #E1E6F0; padding-top: 14px"><span style="font-size: 17px; font-weight: 600">₹[PRICE]</span><span style="font-size: 13px; font-weight: 600; color: #2F5BB7">Ask →</span></span>
+</a><a class="gcard" href="https://wa.me/91XXXXXXXXXX?text=Hi%20Genora!%20Is%20Home%2001%20still%20available%3F" aria-label="Ask about Home 01 on WhatsApp" style="flex: 0 0 auto; width: 250px; margin-right: 16px; background: #FFFFFF; color: #14142B; text-decoration: none; border-radius: 22px; padding: 22px; display: flex; flex-direction: column; gap: 14px; box-sizing: border-box">
+<span style="display: flex; justify-content: space-between; align-items: center"><span style="font-size: 13px; font-weight: 500; color: #4A4E66">Home</span><span style="font-size: 12px; font-weight: 600; color: #183060; background: #E9EFF8; padding: 5px 10px; border-radius: 999px">Available</span></span>
+<span style="font-size: 52px; font-weight: 600; line-height: 1; color: #183060">01</span>
+<span style="font-size: 14px; color: #4A4E66">[SQ.FT] sq.ft · [FACING] facing</span>
+<span style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #E1E6F0; padding-top: 14px"><span style="font-size: 17px; font-weight: 600">₹[PRICE]</span><span style="font-size: 13px; font-weight: 600; color: #2F5BB7">Ask →</span></span>
+</a><a class="gcard" href="https://wa.me/91XXXXXXXXXX?text=Hi%20Genora!%20Is%20Home%2002%20still%20available%3F" aria-label="Ask about Home 02 on WhatsApp" style="flex: 0 0 auto; width: 250px; margin-right: 16px; background: #FFFFFF; color: #14142B; text-decoration: none; border-radius: 22px; padding: 22px; display: flex; flex-direction: column; gap: 14px; box-sizing: border-box">
+<span style="display: flex; justify-content: space-between; align-items: center"><span style="font-size: 13px; font-weight: 500; color: #4A4E66">Home</span><span style="font-size: 12px; font-weight: 600; color: #183060; background: #E9EFF8; padding: 5px 10px; border-radius: 999px">Available</span></span>
+<span style="font-size: 52px; font-weight: 600; line-height: 1; color: #183060">02</span>
+<span style="font-size: 14px; color: #4A4E66">[SQ.FT] sq.ft · [FACING] facing</span>
+<span style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #E1E6F0; padding-top: 14px"><span style="font-size: 17px; font-weight: 600">₹[PRICE]</span><span style="font-size: 13px; font-weight: 600; color: #2F5BB7">Ask →</span></span>
+</a><a class="gcard" href="https://wa.me/91XXXXXXXXXX?text=Hi%20Genora!%20Is%20Home%2003%20still%20available%3F" aria-label="Ask about Home 03 on WhatsApp" style="flex: 0 0 auto; width: 250px; margin-right: 16px; background: #FFFFFF; color: #14142B; text-decoration: none; border-radius: 22px; padding: 22px; display: flex; flex-direction: column; gap: 14px; box-sizing: border-box">
+<span style="display: flex; justify-content: space-between; align-items: center"><span style="font-size: 13px; font-weight: 500; color: #4A4E66">Home</span><span style="font-size: 12px; font-weight: 600; color: #183060; background: #E9EFF8; padding: 5px 10px; border-radius: 999px">Available</span></span>
+<span style="font-size: 52px; font-weight: 600; line-height: 1; color: #183060">03</span>
+<span style="font-size: 14px; color: #4A4E66">[SQ.FT] sq.ft · [FACING] facing</span>
+<span style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #E1E6F0; padding-top: 14px"><span style="font-size: 17px; font-weight: 600">₹[PRICE]</span><span style="font-size: 13px; font-weight: 600; color: #2F5BB7">Ask →</span></span>
+</a><a class="gcard" href="https://wa.me/91XXXXXXXXXX?text=Hi%20Genora!%20Is%20Home%2004%20still%20available%3F" aria-label="Ask about Home 04 on WhatsApp" style="flex: 0 0 auto; width: 250px; margin-right: 16px; background: #FFFFFF; color: #14142B; text-decoration: none; border-radius: 22px; padding: 22px; display: flex; flex-direction: column; gap: 14px; box-sizing: border-box">
+<span style="display: flex; justify-content: space-between; align-items: center"><span style="font-size: 13px; font-weight: 500; color: #4A4E66">Home</span><span style="font-size: 12px; font-weight: 600; color: #183060; background: #E9EFF8; padding: 5px 10px; border-radius: 999px">Available</span></span>
+<span style="font-size: 52px; font-weight: 600; line-height: 1; color: #183060">04</span>
+<span style="font-size: 14px; color: #4A4E66">[SQ.FT] sq.ft · [FACING] facing</span>
+<span style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #E1E6F0; padding-top: 14px"><span style="font-size: 17px; font-weight: 600">₹[PRICE]</span><span style="font-size: 13px; font-weight: 600; color: #2F5BB7">Ask →</span></span>
+</a><a class="gcard" href="https://wa.me/91XXXXXXXXXX?text=Hi%20Genora!%20Is%20Home%2005%20still%20available%3F" aria-label="Ask about Home 05 on WhatsApp" style="flex: 0 0 auto; width: 250px; margin-right: 16px; background: #FFFFFF; color: #14142B; text-decoration: none; border-radius: 22px; padding: 22px; display: flex; flex-direction: column; gap: 14px; box-sizing: border-box">
+<span style="display: flex; justify-content: space-between; align-items: center"><span style="font-size: 13px; font-weight: 500; color: #4A4E66">Home</span><span style="font-size: 12px; font-weight: 600; color: #183060; background: #E9EFF8; padding: 5px 10px; border-radius: 999px">Available</span></span>
+<span style="font-size: 52px; font-weight: 600; line-height: 1; color: #183060">05</span>
+<span style="font-size: 14px; color: #4A4E66">[SQ.FT] sq.ft · [FACING] facing</span>
+<span style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #E1E6F0; padding-top: 14px"><span style="font-size: 17px; font-weight: 600">₹[PRICE]</span><span style="font-size: 13px; font-weight: 600; color: #2F5BB7">Ask →</span></span>
+</a><a class="gcard" href="https://wa.me/91XXXXXXXXXX?text=Hi%20Genora!%20Is%20Home%2006%20still%20available%3F" aria-label="Ask about Home 06 on WhatsApp" style="flex: 0 0 auto; width: 250px; margin-right: 16px; background: #FFFFFF; color: #14142B; text-decoration: none; border-radius: 22px; padding: 22px; display: flex; flex-direction: column; gap: 14px; box-sizing: border-box">
+<span style="display: flex; justify-content: space-between; align-items: center"><span style="font-size: 13px; font-weight: 500; color: #4A4E66">Home</span><span style="font-size: 12px; font-weight: 600; color: #183060; background: #E9EFF8; padding: 5px 10px; border-radius: 999px">Available</span></span>
+<span style="font-size: 52px; font-weight: 600; line-height: 1; color: #183060">06</span>
+<span style="font-size: 14px; color: #4A4E66">[SQ.FT] sq.ft · [FACING] facing</span>
+<span style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #E1E6F0; padding-top: 14px"><span style="font-size: 17px; font-weight: 600">₹[PRICE]</span><span style="font-size: 13px; font-weight: 600; color: #2F5BB7">Ask →</span></span>
+</a><a class="gcard" href="https://wa.me/91XXXXXXXXXX?text=Hi%20Genora!%20Is%20Home%2007%20still%20available%3F" aria-label="Ask about Home 07 on WhatsApp" style="flex: 0 0 auto; width: 250px; margin-right: 16px; background: #FFFFFF; color: #14142B; text-decoration: none; border-radius: 22px; padding: 22px; display: flex; flex-direction: column; gap: 14px; box-sizing: border-box">
+<span style="display: flex; justify-content: space-between; align-items: center"><span style="font-size: 13px; font-weight: 500; color: #4A4E66">Home</span><span style="font-size: 12px; font-weight: 600; color: #183060; background: #E9EFF8; padding: 5px 10px; border-radius: 999px">Available</span></span>
+<span style="font-size: 52px; font-weight: 600; line-height: 1; color: #183060">07</span>
+<span style="font-size: 14px; color: #4A4E66">[SQ.FT] sq.ft · [FACING] facing</span>
+<span style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #E1E6F0; padding-top: 14px"><span style="font-size: 17px; font-weight: 600">₹[PRICE]</span><span style="font-size: 13px; font-weight: 600; color: #2F5BB7">Ask →</span></span>
+</a><a class="gcard" href="https://wa.me/91XXXXXXXXXX?text=Hi%20Genora!%20Is%20Home%2008%20still%20available%3F" aria-label="Ask about Home 08 on WhatsApp" style="flex: 0 0 auto; width: 250px; margin-right: 16px; background: #FFFFFF; color: #14142B; text-decoration: none; border-radius: 22px; padding: 22px; display: flex; flex-direction: column; gap: 14px; box-sizing: border-box">
+<span style="display: flex; justify-content: space-between; align-items: center"><span style="font-size: 13px; font-weight: 500; color: #4A4E66">Home</span><span style="font-size: 12px; font-weight: 600; color: #183060; background: #E9EFF8; padding: 5px 10px; border-radius: 999px">Available</span></span>
+<span style="font-size: 52px; font-weight: 600; line-height: 1; color: #183060">08</span>
+<span style="font-size: 14px; color: #4A4E66">[SQ.FT] sq.ft · [FACING] facing</span>
+<span style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #E1E6F0; padding-top: 14px"><span style="font-size: 17px; font-weight: 600">₹[PRICE]</span><span style="font-size: 13px; font-weight: 600; color: #2F5BB7">Ask →</span></span>
+</a></div></div>
+<div class="gmq" style="position: relative"><div class="gtrack rev"><a class="gcard" href="https://wa.me/91XXXXXXXXXX?text=Hi%20Genora!%20Is%20Home%2009%20still%20available%3F" aria-label="Ask about Home 09 on WhatsApp" style="flex: 0 0 auto; width: 250px; margin-right: 16px; background: #FFFFFF; color: #14142B; text-decoration: none; border-radius: 22px; padding: 22px; display: flex; flex-direction: column; gap: 14px; box-sizing: border-box">
+<span style="display: flex; justify-content: space-between; align-items: center"><span style="font-size: 13px; font-weight: 500; color: #4A4E66">Home</span><span style="font-size: 12px; font-weight: 600; color: #183060; background: #E9EFF8; padding: 5px 10px; border-radius: 999px">Available</span></span>
+<span style="font-size: 52px; font-weight: 600; line-height: 1; color: #183060">09</span>
+<span style="font-size: 14px; color: #4A4E66">[SQ.FT] sq.ft · [FACING] facing</span>
+<span style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #E1E6F0; padding-top: 14px"><span style="font-size: 17px; font-weight: 600">₹[PRICE]</span><span style="font-size: 13px; font-weight: 600; color: #2F5BB7">Ask →</span></span>
+</a><a class="gcard" href="https://wa.me/91XXXXXXXXXX?text=Hi%20Genora!%20Is%20Home%2010%20still%20available%3F" aria-label="Ask about Home 10 on WhatsApp" style="flex: 0 0 auto; width: 250px; margin-right: 16px; background: #FFFFFF; color: #14142B; text-decoration: none; border-radius: 22px; padding: 22px; display: flex; flex-direction: column; gap: 14px; box-sizing: border-box">
+<span style="display: flex; justify-content: space-between; align-items: center"><span style="font-size: 13px; font-weight: 500; color: #4A4E66">Home</span><span style="font-size: 12px; font-weight: 600; color: #183060; background: #E9EFF8; padding: 5px 10px; border-radius: 999px">Available</span></span>
+<span style="font-size: 52px; font-weight: 600; line-height: 1; color: #183060">10</span>
+<span style="font-size: 14px; color: #4A4E66">[SQ.FT] sq.ft · [FACING] facing</span>
+<span style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #E1E6F0; padding-top: 14px"><span style="font-size: 17px; font-weight: 600">₹[PRICE]</span><span style="font-size: 13px; font-weight: 600; color: #2F5BB7">Ask →</span></span>
+</a><a class="gcard" href="https://wa.me/91XXXXXXXXXX?text=Hi%20Genora!%20Is%20Home%2011%20still%20available%3F" aria-label="Ask about Home 11 on WhatsApp" style="flex: 0 0 auto; width: 250px; margin-right: 16px; background: #FFFFFF; color: #14142B; text-decoration: none; border-radius: 22px; padding: 22px; display: flex; flex-direction: column; gap: 14px; box-sizing: border-box">
+<span style="display: flex; justify-content: space-between; align-items: center"><span style="font-size: 13px; font-weight: 500; color: #4A4E66">Home</span><span style="font-size: 12px; font-weight: 600; color: #183060; background: #E9EFF8; padding: 5px 10px; border-radius: 999px">Available</span></span>
+<span style="font-size: 52px; font-weight: 600; line-height: 1; color: #183060">11</span>
+<span style="font-size: 14px; color: #4A4E66">[SQ.FT] sq.ft · [FACING] facing</span>
+<span style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #E1E6F0; padding-top: 14px"><span style="font-size: 17px; font-weight: 600">₹[PRICE]</span><span style="font-size: 13px; font-weight: 600; color: #2F5BB7">Ask →</span></span>
+</a><a class="gcard" href="https://wa.me/91XXXXXXXXXX?text=Hi%20Genora!%20Is%20Home%2012%20still%20available%3F" aria-label="Ask about Home 12 on WhatsApp" style="flex: 0 0 auto; width: 250px; margin-right: 16px; background: #FFFFFF; color: #14142B; text-decoration: none; border-radius: 22px; padding: 22px; display: flex; flex-direction: column; gap: 14px; box-sizing: border-box">
+<span style="display: flex; justify-content: space-between; align-items: center"><span style="font-size: 13px; font-weight: 500; color: #4A4E66">Home</span><span style="font-size: 12px; font-weight: 600; color: #183060; background: #E9EFF8; padding: 5px 10px; border-radius: 999px">Available</span></span>
+<span style="font-size: 52px; font-weight: 600; line-height: 1; color: #183060">12</span>
+<span style="font-size: 14px; color: #4A4E66">[SQ.FT] sq.ft · [FACING] facing</span>
+<span style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #E1E6F0; padding-top: 14px"><span style="font-size: 17px; font-weight: 600">₹[PRICE]</span><span style="font-size: 13px; font-weight: 600; color: #2F5BB7">Ask →</span></span>
+</a><a class="gcard" href="https://wa.me/91XXXXXXXXXX?text=Hi%20Genora!%20Is%20Home%2013%20still%20available%3F" aria-label="Ask about Home 13 on WhatsApp" style="flex: 0 0 auto; width: 250px; margin-right: 16px; background: #FFFFFF; color: #14142B; text-decoration: none; border-radius: 22px; padding: 22px; display: flex; flex-direction: column; gap: 14px; box-sizing: border-box">
+<span style="display: flex; justify-content: space-between; align-items: center"><span style="font-size: 13px; font-weight: 500; color: #4A4E66">Home</span><span style="font-size: 12px; font-weight: 600; color: #183060; background: #E9EFF8; padding: 5px 10px; border-radius: 999px">Available</span></span>
+<span style="font-size: 52px; font-weight: 600; line-height: 1; color: #183060">13</span>
+<span style="font-size: 14px; color: #4A4E66">[SQ.FT] sq.ft · [FACING] facing</span>
+<span style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #E1E6F0; padding-top: 14px"><span style="font-size: 17px; font-weight: 600">₹[PRICE]</span><span style="font-size: 13px; font-weight: 600; color: #2F5BB7">Ask →</span></span>
+</a><a class="gcard" href="https://wa.me/91XXXXXXXXXX?text=Hi%20Genora!%20Is%20Home%2014%20still%20available%3F" aria-label="Ask about Home 14 on WhatsApp" style="flex: 0 0 auto; width: 250px; margin-right: 16px; background: #FFFFFF; color: #14142B; text-decoration: none; border-radius: 22px; padding: 22px; display: flex; flex-direction: column; gap: 14px; box-sizing: border-box">
+<span style="display: flex; justify-content: space-between; align-items: center"><span style="font-size: 13px; font-weight: 500; color: #4A4E66">Home</span><span style="font-size: 12px; font-weight: 600; color: #183060; background: #E9EFF8; padding: 5px 10px; border-radius: 999px">Available</span></span>
+<span style="font-size: 52px; font-weight: 600; line-height: 1; color: #183060">14</span>
+<span style="font-size: 14px; color: #4A4E66">[SQ.FT] sq.ft · [FACING] facing</span>
+<span style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #E1E6F0; padding-top: 14px"><span style="font-size: 17px; font-weight: 600">₹[PRICE]</span><span style="font-size: 13px; font-weight: 600; color: #2F5BB7">Ask →</span></span>
+</a><a class="gcard" href="https://wa.me/91XXXXXXXXXX?text=Hi%20Genora!%20Is%20Home%2015%20still%20available%3F" aria-label="Ask about Home 15 on WhatsApp" style="flex: 0 0 auto; width: 250px; margin-right: 16px; background: #FFFFFF; color: #14142B; text-decoration: none; border-radius: 22px; padding: 22px; display: flex; flex-direction: column; gap: 14px; box-sizing: border-box">
+<span style="display: flex; justify-content: space-between; align-items: center"><span style="font-size: 13px; font-weight: 500; color: #4A4E66">Home</span><span style="font-size: 12px; font-weight: 600; color: #183060; background: #E9EFF8; padding: 5px 10px; border-radius: 999px">Available</span></span>
+<span style="font-size: 52px; font-weight: 600; line-height: 1; color: #183060">15</span>
+<span style="font-size: 14px; color: #4A4E66">[SQ.FT] sq.ft · [FACING] facing</span>
+<span style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #E1E6F0; padding-top: 14px"><span style="font-size: 17px; font-weight: 600">₹[PRICE]</span><span style="font-size: 13px; font-weight: 600; color: #2F5BB7">Ask →</span></span>
+</a><a class="gcard" href="https://wa.me/91XXXXXXXXXX?text=Hi%20Genora!%20Is%20Home%2009%20still%20available%3F" aria-label="Ask about Home 09 on WhatsApp" style="flex: 0 0 auto; width: 250px; margin-right: 16px; background: #FFFFFF; color: #14142B; text-decoration: none; border-radius: 22px; padding: 22px; display: flex; flex-direction: column; gap: 14px; box-sizing: border-box">
+<span style="display: flex; justify-content: space-between; align-items: center"><span style="font-size: 13px; font-weight: 500; color: #4A4E66">Home</span><span style="font-size: 12px; font-weight: 600; color: #183060; background: #E9EFF8; padding: 5px 10px; border-radius: 999px">Available</span></span>
+<span style="font-size: 52px; font-weight: 600; line-height: 1; color: #183060">09</span>
+<span style="font-size: 14px; color: #4A4E66">[SQ.FT] sq.ft · [FACING] facing</span>
+<span style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #E1E6F0; padding-top: 14px"><span style="font-size: 17px; font-weight: 600">₹[PRICE]</span><span style="font-size: 13px; font-weight: 600; color: #2F5BB7">Ask →</span></span>
+</a><a class="gcard" href="https://wa.me/91XXXXXXXXXX?text=Hi%20Genora!%20Is%20Home%2010%20still%20available%3F" aria-label="Ask about Home 10 on WhatsApp" style="flex: 0 0 auto; width: 250px; margin-right: 16px; background: #FFFFFF; color: #14142B; text-decoration: none; border-radius: 22px; padding: 22px; display: flex; flex-direction: column; gap: 14px; box-sizing: border-box">
+<span style="display: flex; justify-content: space-between; align-items: center"><span style="font-size: 13px; font-weight: 500; color: #4A4E66">Home</span><span style="font-size: 12px; font-weight: 600; color: #183060; background: #E9EFF8; padding: 5px 10px; border-radius: 999px">Available</span></span>
+<span style="font-size: 52px; font-weight: 600; line-height: 1; color: #183060">10</span>
+<span style="font-size: 14px; color: #4A4E66">[SQ.FT] sq.ft · [FACING] facing</span>
+<span style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #E1E6F0; padding-top: 14px"><span style="font-size: 17px; font-weight: 600">₹[PRICE]</span><span style="font-size: 13px; font-weight: 600; color: #2F5BB7">Ask →</span></span>
+</a><a class="gcard" href="https://wa.me/91XXXXXXXXXX?text=Hi%20Genora!%20Is%20Home%2011%20still%20available%3F" aria-label="Ask about Home 11 on WhatsApp" style="flex: 0 0 auto; width: 250px; margin-right: 16px; background: #FFFFFF; color: #14142B; text-decoration: none; border-radius: 22px; padding: 22px; display: flex; flex-direction: column; gap: 14px; box-sizing: border-box">
+<span style="display: flex; justify-content: space-between; align-items: center"><span style="font-size: 13px; font-weight: 500; color: #4A4E66">Home</span><span style="font-size: 12px; font-weight: 600; color: #183060; background: #E9EFF8; padding: 5px 10px; border-radius: 999px">Available</span></span>
+<span style="font-size: 52px; font-weight: 600; line-height: 1; color: #183060">11</span>
+<span style="font-size: 14px; color: #4A4E66">[SQ.FT] sq.ft · [FACING] facing</span>
+<span style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #E1E6F0; padding-top: 14px"><span style="font-size: 17px; font-weight: 600">₹[PRICE]</span><span style="font-size: 13px; font-weight: 600; color: #2F5BB7">Ask →</span></span>
+</a><a class="gcard" href="https://wa.me/91XXXXXXXXXX?text=Hi%20Genora!%20Is%20Home%2012%20still%20available%3F" aria-label="Ask about Home 12 on WhatsApp" style="flex: 0 0 auto; width: 250px; margin-right: 16px; background: #FFFFFF; color: #14142B; text-decoration: none; border-radius: 22px; padding: 22px; display: flex; flex-direction: column; gap: 14px; box-sizing: border-box">
+<span style="display: flex; justify-content: space-between; align-items: center"><span style="font-size: 13px; font-weight: 500; color: #4A4E66">Home</span><span style="font-size: 12px; font-weight: 600; color: #183060; background: #E9EFF8; padding: 5px 10px; border-radius: 999px">Available</span></span>
+<span style="font-size: 52px; font-weight: 600; line-height: 1; color: #183060">12</span>
+<span style="font-size: 14px; color: #4A4E66">[SQ.FT] sq.ft · [FACING] facing</span>
+<span style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #E1E6F0; padding-top: 14px"><span style="font-size: 17px; font-weight: 600">₹[PRICE]</span><span style="font-size: 13px; font-weight: 600; color: #2F5BB7">Ask →</span></span>
+</a><a class="gcard" href="https://wa.me/91XXXXXXXXXX?text=Hi%20Genora!%20Is%20Home%2013%20still%20available%3F" aria-label="Ask about Home 13 on WhatsApp" style="flex: 0 0 auto; width: 250px; margin-right: 16px; background: #FFFFFF; color: #14142B; text-decoration: none; border-radius: 22px; padding: 22px; display: flex; flex-direction: column; gap: 14px; box-sizing: border-box">
+<span style="display: flex; justify-content: space-between; align-items: center"><span style="font-size: 13px; font-weight: 500; color: #4A4E66">Home</span><span style="font-size: 12px; font-weight: 600; color: #183060; background: #E9EFF8; padding: 5px 10px; border-radius: 999px">Available</span></span>
+<span style="font-size: 52px; font-weight: 600; line-height: 1; color: #183060">13</span>
+<span style="font-size: 14px; color: #4A4E66">[SQ.FT] sq.ft · [FACING] facing</span>
+<span style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #E1E6F0; padding-top: 14px"><span style="font-size: 17px; font-weight: 600">₹[PRICE]</span><span style="font-size: 13px; font-weight: 600; color: #2F5BB7">Ask →</span></span>
+</a><a class="gcard" href="https://wa.me/91XXXXXXXXXX?text=Hi%20Genora!%20Is%20Home%2014%20still%20available%3F" aria-label="Ask about Home 14 on WhatsApp" style="flex: 0 0 auto; width: 250px; margin-right: 16px; background: #FFFFFF; color: #14142B; text-decoration: none; border-radius: 22px; padding: 22px; display: flex; flex-direction: column; gap: 14px; box-sizing: border-box">
+<span style="display: flex; justify-content: space-between; align-items: center"><span style="font-size: 13px; font-weight: 500; color: #4A4E66">Home</span><span style="font-size: 12px; font-weight: 600; color: #183060; background: #E9EFF8; padding: 5px 10px; border-radius: 999px">Available</span></span>
+<span style="font-size: 52px; font-weight: 600; line-height: 1; color: #183060">14</span>
+<span style="font-size: 14px; color: #4A4E66">[SQ.FT] sq.ft · [FACING] facing</span>
+<span style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #E1E6F0; padding-top: 14px"><span style="font-size: 17px; font-weight: 600">₹[PRICE]</span><span style="font-size: 13px; font-weight: 600; color: #2F5BB7">Ask →</span></span>
+</a><a class="gcard" href="https://wa.me/91XXXXXXXXXX?text=Hi%20Genora!%20Is%20Home%2015%20still%20available%3F" aria-label="Ask about Home 15 on WhatsApp" style="flex: 0 0 auto; width: 250px; margin-right: 16px; background: #FFFFFF; color: #14142B; text-decoration: none; border-radius: 22px; padding: 22px; display: flex; flex-direction: column; gap: 14px; box-sizing: border-box">
+<span style="display: flex; justify-content: space-between; align-items: center"><span style="font-size: 13px; font-weight: 500; color: #4A4E66">Home</span><span style="font-size: 12px; font-weight: 600; color: #183060; background: #E9EFF8; padding: 5px 10px; border-radius: 999px">Available</span></span>
+<span style="font-size: 52px; font-weight: 600; line-height: 1; color: #183060">15</span>
+<span style="font-size: 14px; color: #4A4E66">[SQ.FT] sq.ft · [FACING] facing</span>
+<span style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #E1E6F0; padding-top: 14px"><span style="font-size: 17px; font-weight: 600">₹[PRICE]</span><span style="font-size: 13px; font-weight: 600; color: #2F5BB7">Ask →</span></span>
+</a></div></div>
+</section>
+
+<section class="grise" style="margin: 0 24px; background: #F0F5FC; border-radius: 24px; padding: 56px 48px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #2F5BB7">No surprises</span>
+<h3 style="margin: 0; font-size: 30px; font-weight: 600; line-height: 1.2; color: #183060">What the price covers — said up front.</h3>
+</div>
+<div style="background: #FFFFFF; border-radius: 20px; padding: 24px 26px"><p style="margin: 0 0 10px; font-size: 14px; font-weight: 600; color: #183060">✓ Included</p><p style="margin: 0; font-size: 15px; font-weight: 300; line-height: 1.7; color: #14142B">[e.g. land, construction, car parking, compound wall, EB connection]</p></div>
+<div style="background: #FFFFFF; border-radius: 20px; padding: 24px 26px"><p style="margin: 0 0 10px; font-size: 14px; font-weight: 600; color: #4A4E66">✕ Not included</p><p style="margin: 0; font-size: 15px; font-weight: 300; line-height: 1.7; color: #14142B">[e.g. registration &amp; stamp duty, EB deposit, interiors]</p></div>
+</section>
+
+<section id="proof" style="background: #FFFFFF; padding: 72px 48px; display: flex; flex-direction: column; gap: 44px">
+<div class="grise" style="display: flex; flex-direction: column; gap: 12px">
+<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #2F5BB7">Our track record</span>
+<h2 style="margin: 0; font-size: 44px; font-weight: 600; line-height: 1.12; letter-spacing: -0.015em; color: #183060">Claims <span class="rw">we can count.<svg class="rope" viewBox="0 0 200 14" preserveAspectRatio="none" aria-hidden="true"><path d="M2 9 C 40 3, 80 13, 120 7 S 180 4, 198 8"></path></svg></span></h2>
+</div>
+<div class="grise" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px">
+<div style="background: #F0F5FC; border-radius: 22px; padding: 28px"><p style="margin: 0; font-size: 56px; font-weight: 600; color: #183060">[X]</p><p style="margin: 4px 0 0; font-size: 15px; color: #4A4E66">homes handed over</p></div>
+<div style="background: #F0F5FC; border-radius: 22px; padding: 28px"><p style="margin: 0; font-size: 56px; font-weight: 600; color: #183060">[X] yrs</p><p style="margin: 4px 0 0; font-size: 15px; color: #4A4E66">building in Chennai</p></div>
+<div style="background: #F0F5FC; border-radius: 22px; padding: 28px"><p style="margin: 0; font-size: 56px; font-weight: 600; color: #183060">[X]</p><p style="margin: 4px 0 0; font-size: 15px; color: #4A4E66">families living in Genora homes</p></div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px">
+<figure class="grise gcard" style="margin: 0; border: 1px solid #E1E6F0; border-radius: 22px; padding: 32px; display: flex; flex-direction: column; gap: 20px">
+<span style="font-size: 48px; line-height: .6; color: #9CC0FF" aria-hidden="true">"</span>
+<blockquote style="margin: 0; font-size: 20px; font-weight: 400; line-height: 1.55; color: #183060">[Real words from a family who bought a Genora home — what worried them, and what happened.]</blockquote>
+<figcaption style="display: flex; align-items: center; gap: 12px; font-size: 14px; color: #4A4E66"><span style="width: 40px; height: 40px; border-radius: 50%; background: #E9EFF8"></span><span><b style="color: #14142B">[Name]</b> · [Area], moved in [year]</span></figcaption>
+</figure>
+<figure class="grise gcard" style="margin: 0; border: 1px solid #E1E6F0; border-radius: 22px; padding: 32px; display: flex; flex-direction: column; gap: 20px">
+<span style="font-size: 48px; line-height: .6; color: #9CC0FF" aria-hidden="true">"</span>
+<blockquote style="margin: 0; font-size: 20px; font-weight: 400; line-height: 1.55; color: #183060">[Second family — a 30-second video testimonial works even better.]</blockquote>
+<figcaption style="display: flex; align-items: center; gap: 12px; font-size: 14px; color: #4A4E66"><span style="width: 40px; height: 40px; border-radius: 50%; background: #E9EFF8"></span><span><b style="color: #14142B">[Name]</b> · [Area], moved in [year]</span></figcaption>
+</figure>
+</div>
+</section>
+
+<section class="grise" style="margin: 0 24px; background: #F0F5FC; border-radius: 24px; padding: 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 44px; align-items: center">
+<div style="height: 440px; border-radius: 22px; background: #FFFFFF; display: flex; align-items: flex-end; padding: 20px; box-sizing: border-box"><span style="font-size: 13px; color: #4A4E66">[Photo — the owner at the site]</span></div>
+<div style="display: flex; flex-direction: column; gap: 18px; padding-right: 16px">
+<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #2F5BB7">Behind Genora</span>
+<h2 style="margin: 0; font-size: 40px; font-weight: 600; color: #183060">[OWNER NAME]</h2>
+<p style="margin: 0; font-size: 17px; font-weight: 300; line-height: 1.7; color: #4A4E66">[Two or three lines in his own words: why he builds, what "Genora" means to him, and the promise he makes to every buyer.]</p>
+<a href="https://wa.me/91XXXXXXXXXX?text=Hi!%20I%27d%20like%20to%20speak%20to%20the%20owner%20of%20Genora." style="align-self: flex-start; background: #183060; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 15px; padding: 14px 22px; border-radius: 999px">Talk to him on WhatsApp →</a>
+</div>
+</section>
+
+<section style="background: #183060; padding: 24px 0">
+<div class="gmq"><div class="gtrack fast"><span style="flex: 0 0 auto; display: inline-flex; align-items: center; gap: 28px; margin-right: 28px; font-family: 'Noto Sans Tamil', sans-serif; font-size: 24px; font-weight: 600; color: #FFFFFF; white-space: nowrap">தலைமுறைகளுக்கான வீடுகள்<img src="./assets/41b970a3de2550dab169fb95c6561075.png" alt="" aria-hidden="true" style="height: 28px; width: auto"></span><span style="flex: 0 0 auto; display: inline-flex; align-items: center; gap: 28px; margin-right: 28px; font-family: 'Lexend', sans-serif; font-size: 24px; font-weight: 600; color: #FFFFFF; white-space: nowrap">Positive Aura Homes for Generations<img src="./assets/41b970a3de2550dab169fb95c6561075.png" alt="" aria-hidden="true" style="height: 28px; width: auto"></span><span style="flex: 0 0 auto; display: inline-flex; align-items: center; gap: 28px; margin-right: 28px; font-family: 'Lexend', sans-serif; font-size: 24px; font-weight: 600; color: #FFFFFF; white-space: nowrap">Vastu-correct · Air · Light<img src="./assets/41b970a3de2550dab169fb95c6561075.png" alt="" aria-hidden="true" style="height: 28px; width: auto"></span><span style="flex: 0 0 auto; display: inline-flex; align-items: center; gap: 28px; margin-right: 28px; font-family: 'Lexend', sans-serif; font-size: 24px; font-weight: 600; color: #FFFFFF; white-space: nowrap">GENORA PROPERTY<img src="./assets/41b970a3de2550dab169fb95c6561075.png" alt="" aria-hidden="true" style="height: 28px; width: auto"></span><span style="flex: 0 0 auto; display: inline-flex; align-items: center; gap: 28px; margin-right: 28px; font-family: 'Noto Sans Tamil', sans-serif; font-size: 24px; font-weight: 600; color: #FFFFFF; white-space: nowrap">தலைமுறைகளுக்கான வீடுகள்<img src="./assets/41b970a3de2550dab169fb95c6561075.png" alt="" aria-hidden="true" style="height: 28px; width: auto"></span><span style="flex: 0 0 auto; display: inline-flex; align-items: center; gap: 28px; margin-right: 28px; font-family: 'Lexend', sans-serif; font-size: 24px; font-weight: 600; color: #FFFFFF; white-space: nowrap">Positive Aura Homes for Generations<img src="./assets/41b970a3de2550dab169fb95c6561075.png" alt="" aria-hidden="true" style="height: 28px; width: auto"></span><span style="flex: 0 0 auto; display: inline-flex; align-items: center; gap: 28px; margin-right: 28px; font-family: 'Lexend', sans-serif; font-size: 24px; font-weight: 600; color: #FFFFFF; white-space: nowrap">Vastu-correct · Air · Light<img src="./assets/41b970a3de2550dab169fb95c6561075.png" alt="" aria-hidden="true" style="height: 28px; width: auto"></span><span style="flex: 0 0 auto; display: inline-flex; align-items: center; gap: 28px; margin-right: 28px; font-family: 'Lexend', sans-serif; font-size: 24px; font-weight: 600; color: #FFFFFF; white-space: nowrap">GENORA PROPERTY<img src="./assets/41b970a3de2550dab169fb95c6561075.png" alt="" aria-hidden="true" style="height: 28px; width: auto"></span><span style="flex: 0 0 auto; display: inline-flex; align-items: center; gap: 28px; margin-right: 28px; font-family: 'Noto Sans Tamil', sans-serif; font-size: 24px; font-weight: 600; color: #FFFFFF; white-space: nowrap">தலைமுறைகளுக்கான வீடுகள்<img src="./assets/41b970a3de2550dab169fb95c6561075.png" alt="" aria-hidden="true" style="height: 28px; width: auto"></span><span style="flex: 0 0 auto; display: inline-flex; align-items: center; gap: 28px; margin-right: 28px; font-family: 'Lexend', sans-serif; font-size: 24px; font-weight: 600; color: #FFFFFF; white-space: nowrap">Positive Aura Homes for Generations<img src="./assets/41b970a3de2550dab169fb95c6561075.png" alt="" aria-hidden="true" style="height: 28px; width: auto"></span><span style="flex: 0 0 auto; display: inline-flex; align-items: center; gap: 28px; margin-right: 28px; font-family: 'Lexend', sans-serif; font-size: 24px; font-weight: 600; color: #FFFFFF; white-space: nowrap">Vastu-correct · Air · Light<img src="./assets/41b970a3de2550dab169fb95c6561075.png" alt="" aria-hidden="true" style="height: 28px; width: auto"></span><span style="flex: 0 0 auto; display: inline-flex; align-items: center; gap: 28px; margin-right: 28px; font-family: 'Lexend', sans-serif; font-size: 24px; font-weight: 600; color: #FFFFFF; white-space: nowrap">GENORA PROPERTY<img src="./assets/41b970a3de2550dab169fb95c6561075.png" alt="" aria-hidden="true" style="height: 28px; width: auto"></span><span style="flex: 0 0 auto; display: inline-flex; align-items: center; gap: 28px; margin-right: 28px; font-family: 'Noto Sans Tamil', sans-serif; font-size: 24px; font-weight: 600; color: #FFFFFF; white-space: nowrap">தலைமுறைகளுக்கான வீடுகள்<img src="./assets/41b970a3de2550dab169fb95c6561075.png" alt="" aria-hidden="true" style="height: 28px; width: auto"></span><span style="flex: 0 0 auto; display: inline-flex; align-items: center; gap: 28px; margin-right: 28px; font-family: 'Lexend', sans-serif; font-size: 24px; font-weight: 600; color: #FFFFFF; white-space: nowrap">Positive Aura Homes for Generations<img src="./assets/41b970a3de2550dab169fb95c6561075.png" alt="" aria-hidden="true" style="height: 28px; width: auto"></span><span style="flex: 0 0 auto; display: inline-flex; align-items: center; gap: 28px; margin-right: 28px; font-family: 'Lexend', sans-serif; font-size: 24px; font-weight: 600; color: #FFFFFF; white-space: nowrap">Vastu-correct · Air · Light<img src="./assets/41b970a3de2550dab169fb95c6561075.png" alt="" aria-hidden="true" style="height: 28px; width: auto"></span><span style="flex: 0 0 auto; display: inline-flex; align-items: center; gap: 28px; margin-right: 28px; font-family: 'Lexend', sans-serif; font-size: 24px; font-weight: 600; color: #FFFFFF; white-space: nowrap">GENORA PROPERTY<img src="./assets/41b970a3de2550dab169fb95c6561075.png" alt="" aria-hidden="true" style="height: 28px; width: auto"></span></div></div>
+</section>
+
+<section id="visit" style="margin: 0 24px; position: relative; overflow: hidden; background: #183060; color: #FFFFFF; border-radius: 28px; padding: 72px 56px; display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 48px; align-items: center">
+<img src="./assets/41b970a3de2550dab169fb95c6561075.png" alt="" aria-hidden="true" style="position: absolute; right: -40px; top: -40px; width: 360px; height: auto; opacity: .12">
+<div class="grise" style="position: relative; display: flex; flex-direction: column; gap: 20px">
+<h2 style="margin: 0; font-size: 52px; font-weight: 600; line-height: 1.1; letter-spacing: -0.02em">Come stand on the land your <span class="rw" style="color: #9CC0FF">grandchildren<svg class="rope" viewBox="0 0 200 14" preserveAspectRatio="none" aria-hidden="true"><path d="M2 9 C 40 3, 80 13, 120 7 S 180 4, 198 8"></path></svg></span> will grow up on.</h2>
+<p style="margin: 0; font-size: 17px; font-weight: 300; line-height: 1.6; color: #D3DCEC">Leave your number. We'll call to fix a time and send the location on WhatsApp.</p>
+<p style="margin: 0; font-size: 15px; color: #D3DCEC">Call [PHONE] · Office: [ADDRESS]</p>
+</div>
+<form class="grise" style="position: relative; background: #FFFFFF; color: #14142B; border-radius: 24px; padding: 32px; display: flex; flex-direction: column; gap: 18px">
+<fieldset style="margin: 0; padding: 0; border: none">
+<legend style="padding: 0; margin-bottom: 10px; font-size: 14px; font-weight: 600; color: #183060">I am</legend>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<button type="button" style="font: inherit; font-size: 14px; padding: 10px 16px; border-radius: 999px; background: #183060; color: #FFFFFF; border: 1px solid #183060; cursor: pointer">Buying to live in</button>
+<button type="button" style="font: inherit; font-size: 14px; padding: 10px 16px; border-radius: 999px; background: #FFFFFF; color: #183060; border: 1px solid #C5CEE0; cursor: pointer">Investing</button>
+<button type="button" style="font: inherit; font-size: 14px; padding: 10px 16px; border-radius: 999px; background: #FFFFFF; color: #183060; border: 1px solid #C5CEE0; cursor: pointer">NRI / for family</button>
+</div>
+</fieldset>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600; color: #183060">Name<input type="text" placeholder="Your full name" style="font: inherit; font-weight: 400; font-size: 16px; padding: 14px 16px; border: 1px solid #C5CEE0; border-radius: 14px; background: #F7F9FC"></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600; color: #183060">Phone (WhatsApp)<input type="tel" placeholder="+91" style="font: inherit; font-weight: 400; font-size: 16px; padding: 14px 16px; border: 1px solid #C5CEE0; border-radius: 14px; background: #F7F9FC"></label>
+<button type="button" style="margin-top: 4px; background: #183060; color: #FFFFFF; border: none; font: inherit; font-weight: 600; font-size: 16px; padding: 16px; border-radius: 999px; cursor: pointer">Book my site visit →</button>
+</form>
+</section>
+
+<footer style="margin: 0 24px; background: #183060; color: #A9B8D6; border-radius: 24px; padding: 28px 36px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; font-size: 13px">
+<img src="./assets/085287772648d6285eeccf3a1096d918.png" alt="Genora Property" style="height: 52px; width: auto; display: block">
+<span>[OFFICE ADDRESS] · [PHONE] · [RERA / APPROVAL NO.] · [GSTIN]</span>
+</footer>
+
+</main>
+</div>
+
+<a href="https://wa.me/91XXXXXXXXXX?text=Hi%20Genora!%20I%20saw%20your%20website." aria-label="Chat with Genora on WhatsApp" style="position: fixed; right: 24px; bottom: 24px; z-index: 35; width: 62px; height: 62px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 24px rgba(0,0,0,.2)">
+<span class="gwa-ring" style="position: absolute; inset: 0; border-radius: 50%; border: 2px solid #25D366"></span>
+<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13.5 7.8L3 21l1.3-4.4A9 9 0 1 1 21 12z"></path></svg>
+</a>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":7600}}'>
+class Component extends DCLogic {
+renderVals() {
+return {};
+}
+}
+</script>
+</body>
+</html>

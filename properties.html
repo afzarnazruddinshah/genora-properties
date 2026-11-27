@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Genora Property – All Properties | 15 Homes Vastu · Chennai</title>
+<link rel="icon" type="image/png" sizes="64x64" href="./assets/favicon-64x64.png">
+<link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon-180x180.png">
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;family=Noto+Sans+Tamil:wght@500;600&amp;display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; overflow-x: hidden; -webkit-text-size-adjust: 100%; }
+a { color: #183060; }
+a:hover { color: #0E1F42; }
+summary { list-style: none; }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "+"; float: right; font-family: Lexend, sans-serif; font-weight: 400; color: #3D6FD6; font-size: 20px; }
+details[open] summary::after { content: "–"; }
+
+.g-shell { font-family: Lexend, sans-serif; color: #14142B; background: #CFDDF2; padding: 16px; min-height: 100vh; }
+.g-container { max-width: 1320px; margin: 0 auto; background: #FFFFFF; border-radius: 32px; overflow: hidden; box-shadow: 0 2px 0 rgba(24,48,96,.04); }
+
+/* Header matching Page 1 */
+.g-header-bar { background: rgba(255,255,255,.96); backdrop-filter: blur(8px); border-bottom: 1px solid #E1E6F0; padding: 12px 24px 12px 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; }
+.g-nav { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; font-size: 14px; font-weight: 500; }
+.g-nav-link { color: #183060; text-decoration: none; padding: 10px 14px; border-radius: 999px; transition: background .2s ease; cursor: pointer; }
+.g-nav-link:hover, .g-nav-link.active { background: #F0F5FC; font-weight: 600; }
+.g-nav-cta { background: #183060; color: #FFFFFF !important; text-decoration: none; font-weight: 600; padding: 12px 22px; border-radius: 999px; }
+
+/* Listing View */
+.g-list-wrap { padding: 56px 48px 72px; }
+.g-list-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: 36px; border-bottom: 1px solid #E1E6F0; padding-bottom: 28px; }
+.g-page-title { margin: 0; font-weight: 600; font-size: clamp(32px, 4.2vw, 54px); line-height: 1.08; letter-spacing: -0.02em; color: #183060; }
+.g-props-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.g-prop-card { font: inherit; text-align: left; cursor: pointer; background: #FFFFFF; border: 1px solid #E1E6F0; border-radius: 24px; padding: 14px; display: flex; flex-direction: column; gap: 12px; color: #14142B; transition: transform .25s ease, box-shadow .25s ease; width: 100%; }
+.g-prop-card:hover { transform: translateY(-4px); box-shadow: 0 14px 30px rgba(24,48,96,.16); }
+.g-prop-thumb { position: relative; display: block; height: 210px; border-radius: 16px; background: #F0F5FC; overflow: hidden; width: 100%; }
+.g-prop-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.g-prop-status { position: absolute; top: 12px; left: 12px; background: #183060; color: #FFFFFF; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; padding: 5px 11px; border-radius: 999px; }
+.g-prop-num { position: absolute; right: 12px; bottom: 10px; background: rgba(255,255,255,.92); color: #183060; font-size: 13px; font-weight: 600; padding: 4px 10px; border-radius: 999px; }
+
+/* Detail View */
+.g-detail-top { padding: 20px 48px 0; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; font-size: 14px; }
+.g-subnav-wrap { padding: 0 48px; border-bottom: 1px solid #E1E6F0; overflow-x: auto; }
+.g-subnav { padding: 18px 0; display: flex; gap: 10px; width: max-content; }
+.g-pill { flex: 0 0 auto; font-size: 14px; font-weight: 500; text-decoration: none; padding: 9px 20px; border-radius: 999px; color: #183060; background: #F0F5FC; border: 1px solid #DCE4F1; transition: all .2s ease; }
+.g-pill:hover, .g-pill.primary { background: #183060; color: #FFFFFF; border-color: #183060; }
+
+.g-detail-hero { padding: 40px 48px 56px; display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); gap: 36px; align-items: start; }
+.g-detail-media { position: relative; border-radius: 26px; overflow: hidden; height: 520px; background: #F0F5FC; border: 1px solid #DCE4F1; }
+.g-detail-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.g-detail-card { background: #FFFFFF; border: 1px solid #E1E6F0; border-radius: 26px; padding: 28px; display: flex; flex-direction: column; gap: 18px; box-shadow: 0 10px 28px rgba(24,48,96,.06); }
+.g-meta-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+
+.g-about-grid { padding: 0 48px 64px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 44px; align-items: start; }
+.g-band-soft { margin: 0 24px; background: #F0F5FC; border-radius: 28px; padding: 56px 48px; }
+.g-section-pad { padding: 64px 48px; }
+.g-h2 { margin: 0 0 24px; font-size: clamp(26px, 3.2vw, 40px); font-weight: 600; line-height: 1.15; letter-spacing: -0.015em; color: #183060; }
+
+.g-plans-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.g-amenities-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+.g-amenity-tile { background: #FFFFFF; border: 1px solid #E1E6F0; border-radius: 18px; padding: 20px 14px; display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center; }
+
+.g-specs-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: 44px; align-items: start; }
+.g-loc-grid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 40px; align-items: start; }
+.g-gallery-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.g-gallery-wide { grid-column: span 2; }
+
+.g-prev-next { padding: 0 48px 64px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.g-pn-card { border: 1px solid #E1E6F0; border-radius: 20px; padding: 20px 24px; text-decoration: none; color: #14142B; background: #FFFFFF; transition: background .2s ease; }
+.g-pn-card:hover { background: #F0F5FC; }
+
+/* Footer matching Page 1 */
+.g-footer { margin: 0 24px 24px; background: #183060; color: #A9B8D6; border-radius: 24px; padding: 28px 36px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; font-size: 13px; }
+
+@keyframes gPulse{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.7);opacity:0}}
+.gwa-ring{animation:gPulse 2s ease-out infinite}
+
+/* Tablet Breakpoint (<= 1024px) */
+@media (max-width: 1024px) {
+  .g-list-wrap { padding: 40px 28px 56px; }
+  .g-props-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+  .g-detail-top, .g-subnav-wrap { padding-left: 28px; padding-right: 28px; }
+  .g-detail-hero { grid-template-columns: 1fr; padding: 32px 28px 44px; }
+  .g-detail-media { height: 380px; }
+  .g-about-grid { grid-template-columns: 1fr; padding: 0 28px 48px; gap: 28px; }
+  .g-band-soft { padding: 40px 28px; }
+  .g-section-pad { padding: 48px 28px; }
+  .g-plans-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .g-amenities-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .g-specs-grid, .g-loc-grid { grid-template-columns: 1fr; gap: 28px; }
+  .g-gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .g-prev-next { padding: 0 28px 48px; }
+}
+
+/* Mobile Breakpoint (<= 680px) */
+@media (max-width: 680px) {
+  .g-shell { padding: 8px; }
+  .g-container { border-radius: 22px; }
+  .g-header-bar { padding: 12px 16px; justify-content: center; }
+  .g-header-bar > a img { height: 64px !important; }
+  .g-footer-logo { height: 68px !important; }
+  .g-nav { width: 100%; justify-content: center; gap: 4px; font-size: 13px; }
+  .g-nav-link { padding: 8px 10px; }
+  .g-nav-cta { padding: 9px 16px; font-size: 13px; }
+  .g-list-wrap { padding: 28px 16px 44px; }
+  .g-props-grid { grid-template-columns: 1fr; gap: 16px; }
+  .g-detail-top, .g-subnav-wrap { padding-left: 16px; padding-right: 16px; }
+  .g-detail-hero { padding: 24px 16px 36px; gap: 24px; }
+  .g-detail-media { height: 250px; border-radius: 20px; }
+  .g-detail-card { padding: 20px; border-radius: 20px; }
+  .g-meta-grid { grid-template-columns: 1fr; gap: 14px; }
+  .g-about-grid { padding: 0 16px 36px; }
+  .g-band-soft { margin: 0 12px; padding: 28px 16px; border-radius: 22px; }
+  .g-section-pad { padding: 36px 16px; }
+  .g-plans-grid { grid-template-columns: 1fr; }
+  .g-amenities-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .g-gallery-grid { grid-template-columns: 1fr; }
+  .g-gallery-wide { grid-column: span 1; }
+  .g-prev-next { padding: 0 16px 36px; grid-template-columns: 1fr; }
+  .g-footer { margin: 0 12px 16px; padding: 22px 20px; flex-direction: column; text-align: center; border-radius: 20px; }
+}
+</style>
+</helmet>
+<div class="g-shell">
+<div class="g-container">
+
+<header style="position: sticky; top: 0; z-index: 30">
+<div class="g-header-bar">
+<a href="./index.html" style="display: block"><img src="./assets/gp-logo-with-tagline-white.png" alt="Genora Property – Positive Aura Homes for Generations" style="height: 90px; width: auto; display: block"></a>
+<nav class="g-nav">
+<a href="./index.html#how" class="g-nav-link">How we build</a>
+<a href="#" sc-camel-on-click="{{goList}}" class="g-nav-link active">15 Homes Vastu</a>
+<a href="./index.html#proof" class="g-nav-link">Track record</a>
+<a href="./index.html#visit" class="g-nav-cta">Book a site visit</a>
+</nav>
+</div>
+</header>
+
+<sc-if value="{{showList}}" hint-placeholder-val="{{ true }}">
+<section class="g-list-wrap">
+<div class="g-list-head">
+<div>
+<span style="display: inline-flex; align-items: center; gap: 8px; background: #E9EFF8; color: #183060; font-size: 13px; font-weight: 500; padding: 7px 14px; border-radius: 999px; margin-bottom: 14px"><img src="./assets/41b970a3de2550dab169fb95c6561075.png" alt="" aria-hidden="true" style="height: 15px; width: auto">15 Homes Vastu · RERA, DTCP &amp; CMDA Approved</span>
+<h1 class="g-page-title">All 15 Properties in Chennai</h1>
+</div>
+<p style="margin: 0; max-width: 440px; font-size: 16px; font-weight: 300; line-height: 1.65; color: #4A4E66">15 vastu-correct independent homes across Chennai starting from ₹60L up to ₹1.50 Cr. Select any home to inspect plans, amenities, specifications and location.</p>
+</div>
+
+<div class="g-props-grid">
+<sc-for list="{{props}}" as="p" hint-placeholder-count="6">
+<button type="button" sc-camel-on-click="{{p.open}}" class="g-prop-card">
+<span class="g-prop-thumb">
+<img src="{{p.img}}" alt="{{p.name}} in {{p.area}}">
+<span class="g-prop-status">{{p.status}}</span>
+<span class="g-prop-num">Home {{p.no}}</span>
+</span>
+<span style="display: flex; flex-direction: column; gap: 6px; padding: 4px 6px 6px">
+<span style="font-size: 20px; font-weight: 600; color: #183060">{{p.name}}</span>
+<span style="font-size: 14px; color: #4A4E66">{{p.area}} · {{p.facing}} facing</span>
+<span style="font-size: 14px; color: #14142B">{{p.type}} · {{p.bhk}} · {{p.sqft}}</span>
+<span style="margin-top: 8px; padding-top: 12px; border-top: 1px solid #E1E6F0; display: flex; justify-content: space-between; align-items: center; gap: 12px">
+<span style="font-size: 17px; font-weight: 600; color: #183060">{{p.price}}</span>
+<span style="font-size: 13px; font-weight: 600; color: #2F5BB7">View details →</span>
+</span>
+</span>
+</button>
+</sc-for>
+</div>
+</section>
+</sc-if>
+
+<sc-if value="{{showDetail}}" hint-placeholder-val="{{ false }}">
+<div class="g-detail-top">
+<a href="#" sc-camel-on-click="{{goList}}" style="color: #183060; text-decoration: none; font-weight: 600">← Back to all 15 properties</a>
+<span style="color: #4A4E66; font-weight: 500">Home {{sel.no}} of 15 · 15 Homes Vastu</span>
+</div>
+
+<div class="g-subnav-wrap">
+<nav class="g-subnav">
+<a href="#g-about" class="g-pill primary">About</a>
+<a href="#g-plans" class="g-pill">Plans</a>
+<a href="#g-amenities" class="g-pill">Amenities</a>
+<a href="#g-specifications" class="g-pill">Specifications</a>
+<a href="#g-location" class="g-pill">Location</a>
+<a href="#g-gallery" class="g-pill">Gallery</a>
+<a href="#g-walkthrough" class="g-pill">Walkthrough</a>
+</nav>
+</div>
+
+<section id="g-about" class="g-detail-hero">
+<div class="g-detail-media">
+<img src="{{sel.img}}" alt="{{sel.name}} exterior in {{sel.area}}">
+<span style="position: absolute; top: 18px; left: 18px; background: #183060; color: #FFFFFF; font-size: 12px; font-weight: 600; letter-spacing: 0.06em; padding: 6px 14px; border-radius: 999px">{{sel.status}}</span>
+</div>
+
+<aside class="g-detail-card">
+<div style="display: flex; align-items: center; justify-content: space-between">
+<img src="./assets/41b970a3de2550dab169fb95c6561075.png" alt="" aria-hidden="true" style="width: 44px; height: auto">
+<span style="font-size: 12px; font-weight: 600; color: #2F5BB7; background: #E9EFF8; padding: 5px 12px; border-radius: 999px">100% Vastu-Correct</span>
+</div>
+<div>
+<h1 style="margin: 0; font-weight: 600; font-size: clamp(26px, 2.6vw, 34px); color: #183060">{{sel.name}}</h1>
+<p style="margin: 6px 0 0; font-size: 15px; color: #4A4E66">{{sel.address}}</p>
+</div>
+<div style="border-top: 1px solid #E1E6F0; border-bottom: 1px solid #E1E6F0; padding: 14px 0; display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: #4A4E66">
+<span><b style="color: #183060">Approvals:</b> {{sel.rera}}</span>
+<span><b style="color: #183060">Orientation:</b> {{sel.facing}} facing · Clear Title</span>
+</div>
+<div style="background: #F0F5FC; color: #183060; text-align: center; font-size: 20px; font-weight: 600; padding: 14px; border-radius: 16px">{{sel.price}}</div>
+
+<div class="g-meta-grid">
+<div style="display: flex; gap: 10px; align-items: flex-start">
+<svg width="26" height="26" sc-camel-view-box="0 0 24 24" fill="none" stroke="#3D6FD6" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V9l8-5 8 5v11"></path><path d="M9 20v-6h6v6"></path></svg>
+<div><div style="font-size: 11px; letter-spacing: 0.06em; color: #4A4E66">PROJECT TYPE</div><div style="margin-top: 2px; font-size: 15px; font-weight: 600; color: #183060">{{sel.type}}</div></div>
+</div>
+<div style="display: flex; gap: 10px; align-items: flex-start">
+<svg width="26" height="26" sc-camel-view-box="0 0 24 24" fill="none" stroke="#3D6FD6" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M3 12h18"></path></svg>
+<div><div style="font-size: 11px; letter-spacing: 0.06em; color: #4A4E66">CONFIGURATION</div><div style="margin-top: 2px; font-size: 15px; font-weight: 600; color: #183060">{{sel.bhk}}</div></div>
+</div>
+<div style="display: flex; gap: 10px; align-items: flex-start">
+<svg width="26" height="26" sc-camel-view-box="0 0 24 24" fill="none" stroke="#3D6FD6" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16"></rect><circle cx="4" cy="4" r="1.5"></circle><circle cx="20" cy="20" r="1.5"></circle></svg>
+<div><div style="font-size: 11px; letter-spacing: 0.06em; color: #4A4E66">BUILT-UP AREA</div><div style="margin-top: 2px; font-size: 15px; font-weight: 600; color: #183060">{{sel.sqft}}</div></div>
+</div>
+<div style="display: flex; gap: 10px; align-items: flex-start">
+<svg width="26" height="26" sc-camel-view-box="0 0 24 24" fill="none" stroke="#3D6FD6" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8"></circle><path d="M12 8v4l3 2"></path></svg>
+<div><div style="font-size: 11px; letter-spacing: 0.06em; color: #4A4E66">COLLECTION</div><div style="margin-top: 2px; font-size: 15px; font-weight: 600; color: #183060">15 Homes Vastu</div></div>
+</div>
+</div>
+
+<div style="display: flex; gap: 10px">
+<a href="https://wa.me/919840520883?text=Hi%20Genora!%20Please%20share%20the%20brochure%20and%20floor%20plan%20for%2015%20Homes%20Vastu." style="flex: 1; background: #183060; color: #FFFFFF; text-align: center; text-decoration: none; font-size: 15px; font-weight: 600; padding: 14px 16px; border-radius: 999px">Ask on WhatsApp →</a>
+<a href="tel:+919840520883" aria-label="Call Genora Property" style="width: 48px; height: 48px; border-radius: 50%; border: 1.5px solid #183060; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="20" height="20" sc-camel-view-box="0 0 24 24" fill="none" stroke="#183060" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"></path></svg></a>
+<a href="#g-location" aria-label="View Location" style="width: 48px; height: 48px; border-radius: 50%; border: 1.5px solid #183060; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="20" height="20" sc-camel-view-box="0 0 24 24" fill="none" stroke="#183060" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21Z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg></a>
+</div>
+
+<div style="border-top: 1px solid #E1E6F0; padding-top: 16px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 16px; font-weight: 600; color: #183060">Book a Site Visit</span>
+<input type="text" aria-label="Name" placeholder="Your full name" style="font: inherit; font-size: 14px; padding: 12px 14px; border: 1px solid #C5CEE0; border-radius: 12px; background: #F7F9FC; color: #14142B; width: 100%">
+<input type="tel" aria-label="Mobile number" placeholder="+91 Mobile / WhatsApp" style="font: inherit; font-size: 14px; padding: 12px 14px; border: 1px solid #C5CEE0; border-radius: 12px; background: #F7F9FC; color: #14142B; width: 100%">
+<button type="button" style="margin-top: 4px; background: #FFFFFF; color: #183060; border: 1.5px solid #183060; font: inherit; font-size: 14px; font-weight: 600; padding: 12px; border-radius: 999px; cursor: pointer; width: 100%">Request Call Back</button>
+</div>
+</aside>
+</section>
+
+<section class="g-about-grid">
+<div>
+<span style="font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #2F5BB7">Positive Aura Design</span>
+<h2 class="g-h2" style="margin-top: 8px">About {{sel.name}}</h2>
+<p style="margin: 0 0 14px; font-size: 20px; font-weight: 500; line-height: 1.4; color: #183060">Vastu-correct independent home in {{sel.area}}, crafted for generations.</p>
+<p style="margin: 0; font-size: 16px; font-weight: 300; line-height: 1.75; color: #4A4E66">With 7 years of building experience in Chennai, Mahesh and the Genora Property team select only vastu-correct land with clear RERA, DTCP &amp; CMDA approvals. Every home in <b>15 Homes Vastu</b> is planned so fresh air flows through and sunlight reaches every room.</p>
+</div>
+<ul style="margin: 0; padding: 0; list-style: none; align-self: end">
+<li style="display: flex; align-items: center; gap: 12px; padding: 14px 0; border-bottom: 1px solid #E1E6F0; font-size: 15px; color: #14142B"><img src="./assets/41b970a3de2550dab169fb95c6561075.png" alt="" aria-hidden="true" style="width: 18px; height: auto">Vastu-correct land chosen before construction begins</li>
+<li style="display: flex; align-items: center; gap: 12px; padding: 14px 0; border-bottom: 1px solid #E1E6F0; font-size: 15px; color: #14142B"><img src="./assets/41b970a3de2550dab169fb95c6561075.png" alt="" aria-hidden="true" style="width: 18px; height: auto">Planned for cross-ventilation — fresh air in and out</li>
+<li style="display: flex; align-items: center; gap: 12px; padding: 14px 0; border-bottom: 1px solid #E1E6F0; font-size: 15px; color: #14142B"><img src="./assets/41b970a3de2550dab169fb95c6561075.png" alt="" aria-hidden="true" style="width: 18px; height: auto">Natural sunlight reaching every living space</li>
+<li style="display: flex; align-items: center; gap: 12px; padding: 14px 0; border-bottom: 1px solid #E1E6F0; font-size: 15px; color: #14142B"><img src="./assets/41b970a3de2550dab169fb95c6561075.png" alt="" aria-hidden="true" style="width: 18px; height: auto">Clear title · RERA, DTCP &amp; CMDA approved</li>
+<li style="display: flex; align-items: center; gap: 12px; padding: 14px 0; border-bottom: 1px solid #E1E6F0; font-size: 15px; color: #14142B"><img src="./assets/41b970a3de2550dab169fb95c6561075.png" alt="" aria-hidden="true" style="width: 18px; height: auto">Weekly stage-by-stage construction photos on WhatsApp</li>
+</ul>
+</section>
+
+<section id="g-plans" class="g-band-soft">
+<h2 class="g-h2">Plans &amp; Elevation</h2>
+<div class="g-plans-grid">
+<figure style="margin: 0; border: 1px solid #DCE4F1; border-radius: 20px; background: #FFFFFF; overflow: hidden">
+<div style="height: 180px; overflow: hidden"><img src="./assets/stage-01-land.jpeg" alt="Plot and site layout" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+<figcaption style="padding: 12px 16px; font-size: 14px; font-weight: 500; color: #183060">Vastu Plot &amp; Site Layout</figcaption>
+</figure>
+<figure style="margin: 0; border: 1px solid #DCE4F1; border-radius: 20px; background: #FFFFFF; overflow: hidden">
+<div style="height: 180px; overflow: hidden"><img src="./assets/stage-02-construction.jpeg" alt="Structural layout" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+<figcaption style="padding: 12px 16px; font-size: 14px; font-weight: 500; color: #183060">Ground &amp; First Floor Plan</figcaption>
+</figure>
+<figure style="margin: 0; border: 1px solid #DCE4F1; border-radius: 20px; background: #FFFFFF; overflow: hidden">
+<div style="height: 180px; overflow: hidden"><img src="./assets/stage-03-finished-home.jpeg" alt="Finished elevation" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+<figcaption style="padding: 12px 16px; font-size: 14px; font-weight: 500; color: #183060">Front Elevation View</figcaption>
+</figure>
+<figure style="margin: 0; border: 1px solid #DCE4F1; border-radius: 20px; background: #FFFFFF; overflow: hidden">
+<div style="height: 180px; overflow: hidden"><img src="./assets/image1.jpeg" alt="Terrace and ventilation plan" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+<figcaption style="padding: 12px 16px; font-size: 14px; font-weight: 500; color: #183060">Terrace &amp; Airflow Layout</figcaption>
+</figure>
+</div>
+</section>
+
+<section id="g-amenities" class="g-section-pad">
+<h2 class="g-h2">Amenities &amp; Features</h2>
+<div class="g-amenities-grid">
+<div class="g-amenity-tile"><svg width="30" height="30" sc-camel-view-box="0 0 24 24" fill="none" stroke="#3D6FD6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V8h16v12M4 8l8-4 8 4M9 20v-8h6v8"></path></svg><span style="font-size: 14px; font-weight: 500; color: #183060">Compound &amp; Gate</span></div>
+<div class="g-amenity-tile"><svg width="30" height="30" sc-camel-view-box="0 0 24 24" fill="none" stroke="#3D6FD6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="6" rx="2"></rect><path d="M5 11l2-5h10l2 5M7 17v2M17 17v2"></path></svg><span style="font-size: 14px; font-weight: 500; color: #183060">Covered Car Parking</span></div>
+<div class="g-amenity-tile"><svg width="30" height="30" sc-camel-view-box="0 0 24 24" fill="none" stroke="#3D6FD6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"></path></svg><span style="font-size: 14px; font-weight: 500; color: #183060">Rainwater Harvesting</span></div>
+<div class="g-amenity-tile"><svg width="30" height="30" sc-camel-view-box="0 0 24 24" fill="none" stroke="#3D6FD6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v8M8 11h8v10H8z"></path></svg><span style="font-size: 14px; font-weight: 500; color: #183060">Borewell &amp; Sump</span></div>
+<div class="g-amenity-tile"><svg width="30" height="30" sc-camel-view-box="0 0 24 24" fill="none" stroke="#3D6FD6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M2 12h2M20 12h2"></path></svg><span style="font-size: 14px; font-weight: 500; color: #183060">Natural Daylight Design</span></div>
+<div class="g-amenity-tile"><svg width="30" height="30" sc-camel-view-box="0 0 24 24" fill="none" stroke="#3D6FD6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21v-8M12 13c-4 0-6-3-6-6 3 0 6 2 6 6zM12 13c4 0 6-3 6-6-3 0-6 2-6 6z"></path></svg><span style="font-size: 14px; font-weight: 500; color: #183060">Private Garden Space</span></div>
+<div class="g-amenity-tile"><svg width="30" height="30" sc-camel-view-box="0 0 24 24" fill="none" stroke="#3D6FD6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="13" height="8" rx="1"></rect><path d="M16 10l5-2v8l-5-2"></path></svg><span style="font-size: 14px; font-weight: 500; color: #183060">CCTV Provision</span></div>
+<div class="g-amenity-tile"><svg width="30" height="30" sc-camel-view-box="0 0 24 24" fill="none" stroke="#3D6FD6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-5 9 5M5 9v10M19 9v10M3 19h18"></path></svg><span style="font-size: 14px; font-weight: 500; color: #183060">Dedicated Pooja Room</span></div>
+</div>
+</section>
+
+<section id="g-specifications" class="g-band-soft">
+<div class="g-specs-grid">
+<div>
+<h2 class="g-h2">Specifications</h2>
+<div style="border-radius: 22px; overflow: hidden; height: 340px; border: 1px solid #DCE4F1"><img src="./assets/stage-03-finished-home.jpeg" alt="Genora home finish and facade" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+</div>
+<div style="background: #FFFFFF; border-radius: 22px; padding: 12px 24px; border: 1px solid #E1E6F0">
+<details style="border-bottom: 1px solid #E1E6F0; padding: 18px 0" open=""><summary style="cursor: pointer; font-size: 18px; font-weight: 600; color: #183060">Structure</summary><ul style="margin: 10px 0 0; padding-left: 20px; font-size: 14px; line-height: 1.8; color: #4A4E66"><li>Seismic-compliant RCC framed structure with branded Fe-550D steel</li><li>Solid brickwork with river-sand plastering</li></ul></details>
+<details style="border-bottom: 1px solid #E1E6F0; padding: 18px 0"><summary style="cursor: pointer; font-size: 18px; font-weight: 600; color: #183060">Flooring &amp; Finishes</summary><ul style="margin: 10px 0 0; padding-left: 20px; font-size: 14px; line-height: 1.8; color: #4A4E66"><li>Premium vitrified tiles in living, dining and bedrooms</li><li>Anti-skid ceramic tiles in balconies, utility and bathrooms</li></ul></details>
+<details style="border-bottom: 1px solid #E1E6F0; padding: 18px 0"><summary style="cursor: pointer; font-size: 18px; font-weight: 600; color: #183060">Kitchen &amp; Bathrooms</summary><ul style="margin: 10px 0 0; padding-left: 20px; font-size: 14px; line-height: 1.8; color: #4A4E66"><li>Polished granite counter with stainless steel sink &amp; chimney provision</li><li>Branded CP fittings, wall tiles up to ceiling height, and geyser points</li></ul></details>
+<details style="border-bottom: 1px solid #E1E6F0; padding: 18px 0"><summary style="cursor: pointer; font-size: 18px; font-weight: 600; color: #183060">Doors, Windows &amp; Electrical</summary><ul style="margin: 10px 0 0; padding-left: 20px; font-size: 14px; line-height: 1.8; color: #4A4E66"><li>First-quality teak wood main entrance door &amp; UPVC windows with mesh</li><li>Concealed copper wiring, modular switches &amp; 3-phase EB connection</li></ul></details>
+<details style="padding: 18px 0"><summary style="cursor: pointer; font-size: 18px; font-weight: 600; color: #183060">Water &amp; Sustainability</summary><ul style="margin: 10px 0 0; padding-left: 20px; font-size: 14px; line-height: 1.8; color: #4A4E66"><li>Individual borewell, underground sump, overhead tank &amp; rainwater harvesting</li></ul></details>
+</div>
+</div>
+</section>
+
+<section id="g-location" class="g-section-pad">
+<h2 class="g-h2">Location &amp; Connectivity</h2>
+<div class="g-loc-grid">
+<div style="border-radius: 22px; overflow: hidden; height: 380px; border: 1px solid #DCE4F1; position: relative">
+<img src="./assets/stage-01-land.jpeg" alt="Site neighbourhood in {{sel.area}}" style="width: 100%; height: 100%; object-fit: cover; display: block">
+<div style="position: absolute; inset: auto 16px 16px 16px; background: rgba(255,255,255,.95); padding: 14px 18px; border-radius: 16px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px">
+<span style="font-size: 14px; font-weight: 600; color: #183060">{{sel.address}}</span>
+<a href="https://wa.me/919840520883?text=Hi%20Genora!%20Please%20send%20the%20Google%20Maps%20pin%20for%2015%20Homes%20Vastu." style="font-size: 13px; font-weight: 600; color: #2F5BB7; text-decoration: none">Get Map Pin on WhatsApp →</a>
+</div>
+</div>
+<div>
+<p style="margin: 0 0 18px; font-size: 20px; font-weight: 600; color: #183060">Well-connected address in {{sel.area}}, Chennai.</p>
+<div style="border-top: 1px solid #E1E6F0; padding: 14px 0; display: flex; justify-content: space-between; gap: 16px; font-size: 15px"><span><b style="color: #183060">Schools &amp; Colleges</b><br><span style="color: #4A4E66">Reputed CBSE &amp; Matriculation schools</span></span><span style="color: #2F5BB7; font-weight: 600">5–10 mins</span></div>
+<div style="border-top: 1px solid #E1E6F0; padding: 14px 0; display: flex; justify-content: space-between; gap: 16px; font-size: 15px"><span><b style="color: #183060">Hospitals</b><br><span style="color: #4A4E66">Multi-speciality healthcare centres</span></span><span style="color: #2F5BB7; font-weight: 600">10 mins</span></div>
+<div style="border-top: 1px solid #E1E6F0; padding: 14px 0; display: flex; justify-content: space-between; gap: 16px; font-size: 15px"><span><b style="color: #183060">Transit &amp; Arterial Roads</b><br><span style="color: #4A4E66">Easy access to Metro, Suburban Rail &amp; Highways</span></span><span style="color: #2F5BB7; font-weight: 600">10–15 mins</span></div>
+<div style="border-top: 1px solid #E1E6F0; padding: 14px 0; display: flex; justify-content: space-between; gap: 16px; font-size: 15px"><span><b style="color: #183060">Genora Head Office</b><br><span style="color: #4A4E66">No.46, Genora Complex, Anna Nagar, Chennai</span></span><span style="color: #2F5BB7; font-weight: 600">Visit Us</span></div>
+</div>
+</div>
+</section>
+
+<section id="g-gallery" class="g-band-soft">
+<h2 class="g-h2">Gallery &amp; Site Progress</h2>
+<div class="g-gallery-grid">
+<div class="g-gallery-wide" style="position: relative; border-radius: 20px; overflow: hidden; height: 300px"><img src="./assets/stage-03-finished-home.jpeg" alt="Completed Genora home exterior" style="width: 100%; height: 100%; object-fit: cover; display: block"><span style="position: absolute; bottom: 12px; left: 12px; background: rgba(255,255,255,.92); color: #183060; font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 999px">Finished Exterior</span></div>
+<div style="position: relative; border-radius: 20px; overflow: hidden; height: 300px"><img src="./assets/image1.jpeg" alt="Independent home facade" style="width: 100%; height: 100%; object-fit: cover; display: block"><span style="position: absolute; bottom: 12px; left: 12px; background: rgba(255,255,255,.92); color: #183060; font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 999px">Front Elevation</span></div>
+<div style="position: relative; border-radius: 20px; overflow: hidden; height: 260px"><img src="./assets/image2.jpeg" alt="Villa elevation" style="width: 100%; height: 100%; object-fit: cover; display: block"><span style="position: absolute; bottom: 12px; left: 12px; background: rgba(255,255,255,.92); color: #183060; font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 999px">Garden &amp; Balcony</span></div>
+<div style="position: relative; border-radius: 20px; overflow: hidden; height: 260px"><img src="./assets/stage-02-construction.jpeg" alt="Open construction stage" style="width: 100%; height: 100%; object-fit: cover; display: block"><span style="position: absolute; bottom: 12px; left: 12px; background: rgba(255,255,255,.92); color: #183060; font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 999px">Build in the Open</span></div>
+<div style="position: relative; border-radius: 20px; overflow: hidden; height: 260px"><img src="./assets/owner-site.jpeg" alt="Mahesh on site inspection" style="width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block"><span style="position: absolute; bottom: 12px; left: 12px; background: rgba(255,255,255,.92); color: #183060; font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 999px">On-Site Quality Check</span></div>
+</div>
+</section>
+
+<section id="g-walkthrough" class="g-section-pad">
+<h2 class="g-h2">Walkthrough &amp; Site Tour</h2>
+<a href="https://wa.me/919840520883?text=Hi%20Genora!%20Please%20share%20the%20site%20walkthrough%20video%20for%2015%20Homes%20Vastu." style="position: relative; border-radius: 24px; overflow: hidden; display: flex; align-items: center; justify-content: center; height: 380px; background: #183060; text-decoration: none">
+<img src="./assets/image3.jpeg" alt="Walkthrough preview" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .45">
+<span style="position: relative; width: 76px; height: 76px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 26px rgba(0,0,0,.25)"><svg width="28" height="28" sc-camel-view-box="0 0 24 24" fill="#183060" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"></path></svg></span>
+<span style="position: absolute; left: 20px; bottom: 18px; font-size: 14px; font-weight: 500; color: #FFFFFF">Request live video walkthrough on WhatsApp · {{sel.name}}</span>
+</a>
+</section>
+
+<div class="g-prev-next">
+<a href="#" sc-camel-on-click="{{goPrev}}" class="g-pn-card"><span style="display: block; font-size: 13px; color: #4A4E66">← Previous property</span><span style="display: block; margin-top: 6px; font-size: 19px; font-weight: 600; color: #183060">{{prev.name}}</span></a>
+<a href="#" sc-camel-on-click="{{goNext}}" class="g-pn-card" style="text-align: right"><span style="display: block; font-size: 13px; color: #4A4E66">Next property →</span><span style="display: block; margin-top: 6px; font-size: 19px; font-weight: 600; color: #183060">{{next.name}}</span></a>
+</div>
+</sc-if>
+
+<footer class="g-footer">
+<img class="g-footer-logo" src="./assets/gp-logo-with-tagline-blue.png" alt="Genora Property" style="height: 90px; width: auto; display: block">
+<span>No.46, Genora Complex, Anna Nagar, Chennai · +91 98405 20883 · 15 Homes Vastu · RERA, DTCP &amp; CMDA Approved</span>
+</footer>
+
+</div>
+
+<a href="https://wa.me/919840520883?text=Hi%20Genora!%20I%20saw%20your%20properties%20for%2015%20Homes%20Vastu." aria-label="Chat with Genora on WhatsApp" style="position: fixed; right: 20px; bottom: 20px; z-index: 35; width: 58px; height: 58px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 24px rgba(0,0,0,.2)">
+<span class="gwa-ring" style="position: absolute; inset: 0; border-radius: 50%; border: 2px solid #25D366"></span>
+<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13.5 7.8L3 21l1.3-4.4A9 9 0 1 1 21 12z"></path></svg>
+</a>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script="" data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:7600}}">
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.state = { sel: null };
+}
+data() {
+var items = [
+  { no: '01', name: 'Genora Vastu Home 01', area: 'Anna Nagar, Chennai', address: 'Anna Nagar West Extension, Chennai – 600101', type: 'Independent Home', bhk: '3 BHK Duplex', sqft: '1,650 sq.ft', facing: 'East', price: '₹1.50 Cr', rera: 'RERA, DTCP & CMDA Approved', status: 'AVAILABLE', img: './assets/image1.jpeg' },
+  { no: '02', name: 'Genora Vastu Home 02', area: 'Porur, Chennai', address: 'Mount Poonamallee Road, Porur, Chennai – 600116', type: 'Independent Home', bhk: '2 & 3 BHK', sqft: '1,150 sq.ft', facing: 'North', price: '₹75L', rera: 'RERA, DTCP & CMDA Approved', status: 'AVAILABLE', img: './assets/image2.jpeg' },
+  { no: '03', name: 'Genora Vastu Home 03', area: 'Tambaram, Chennai', address: 'East Tambaram, Chennai – 600059', type: 'Independent Home', bhk: '2 BHK', sqft: '950 sq.ft', facing: 'East', price: '₹60L', rera: 'RERA, DTCP & CMDA Approved', status: 'AVAILABLE', img: './assets/image3.jpeg' },
+  { no: '04', name: 'Genora Vastu Home 04', area: 'Velachery, Chennai', address: 'Vijaya Nagar, Velachery, Chennai – 600042', type: 'Independent Villa', bhk: '3 BHK', sqft: '1,400 sq.ft', facing: 'North', price: '₹1.20 Cr', rera: 'RERA, DTCP & CMDA Approved', status: 'AVAILABLE', img: './assets/image1.jpeg' },
+  { no: '05', name: 'Genora Vastu Home 05', area: 'OMR, Chennai', address: 'Sholinganallur, OMR, Chennai – 600119', type: 'Independent Home', bhk: '3 BHK', sqft: '1,250 sq.ft', facing: 'East', price: '₹92L', rera: 'RERA, DTCP & CMDA Approved', status: 'AVAILABLE', img: './assets/image2.jpeg' },
+  { no: '06', name: 'Genora Vastu Home 06', area: 'Mogappair, Chennai', address: 'Mogappair East, Chennai – 600037', type: 'Independent Villa', bhk: '3 BHK', sqft: '1,380 sq.ft', facing: 'North', price: '₹1.15 Cr', rera: 'RERA, DTCP & CMDA Approved', status: 'AVAILABLE', img: './assets/image3.jpeg' },
+  { no: '07', name: 'Genora Vastu Home 07', area: 'Chromepet, Chennai', address: 'GST Road, Chromepet, Chennai – 600044', type: 'Independent Home', bhk: '2 BHK', sqft: '1,050 sq.ft', facing: 'East', price: '₹68L', rera: 'RERA, DTCP & CMDA Approved', status: 'AVAILABLE', img: './assets/image1.jpeg' },
+  { no: '08', name: 'Genora Vastu Home 08', area: 'Madipakkam, Chennai', address: 'Balaiah Garden, Madipakkam, Chennai – 600091', type: 'Independent Home', bhk: '2 & 3 BHK', sqft: '1,200 sq.ft', facing: 'North', price: '₹85L', rera: 'RERA, DTCP & CMDA Approved', status: 'AVAILABLE', img: './assets/image2.jpeg' },
+  { no: '09', name: 'Genora Vastu Home 09', area: 'Thiruvanmiyur, Chennai', address: 'Kalakshetra Colony, Thiruvanmiyur, Chennai – 600041', type: 'Independent Villa', bhk: '3 BHK Duplex', sqft: '1,550 sq.ft', facing: 'East', price: '₹1.42 Cr', rera: 'RERA, DTCP & CMDA Approved', status: 'AVAILABLE', img: './assets/image3.jpeg' },
+  { no: '10', name: 'Genora Vastu Home 10', area: 'Ambattur, Chennai', address: 'Ambattur OT, Chennai – 600053', type: 'Independent Home', bhk: '2 BHK', sqft: '1,000 sq.ft', facing: 'North', price: '₹64L', rera: 'RERA, DTCP & CMDA Approved', status: 'AVAILABLE', img: './assets/image1.jpeg' },
+  { no: '11', name: 'Genora Vastu Home 11', area: 'Pallikaranai, Chennai', address: 'Velachery Main Road, Pallikaranai, Chennai – 600100', type: 'Independent Home', bhk: '2 & 3 BHK', sqft: '1,180 sq.ft', facing: 'East', price: '₹79L', rera: 'RERA, DTCP & CMDA Approved', status: 'AVAILABLE', img: './assets/image2.jpeg' },
+  { no: '12', name: 'Genora Vastu Home 12', area: 'Vadapalani, Chennai', address: 'Arcot Road, Vadapalani, Chennai – 600026', type: 'Independent Villa', bhk: '3 BHK', sqft: '1,480 sq.ft', facing: 'North', price: '₹1.32 Cr', rera: 'RERA, DTCP & CMDA Approved', status: 'AVAILABLE', img: './assets/image3.jpeg' },
+  { no: '13', name: 'Genora Vastu Home 13', area: 'Medavakkam, Chennai', address: 'Perumbakkam Main Road, Medavakkam, Chennai – 600100', type: 'Independent Home', bhk: '2 BHK', sqft: '1,120 sq.ft', facing: 'East', price: '₹72L', rera: 'RERA, DTCP & CMDA Approved', status: 'AVAILABLE', img: './assets/image1.jpeg' },
+  { no: '14', name: 'Genora Vastu Home 14', area: 'ECR, Chennai', address: 'Neelankarai, East Coast Road, Chennai – 600115', type: 'Independent Villa', bhk: '3 BHK Duplex', sqft: '1,600 sq.ft', facing: 'North', price: '₹1.45 Cr', rera: 'RERA, DTCP & CMDA Approved', status: 'AVAILABLE', img: './assets/image2.jpeg' },
+  { no: '15', name: 'Genora Vastu Home 15', area: 'Avadi, Chennai', address: 'Poonamallee High Road, Avadi, Chennai – 600054', type: 'Independent Home', bhk: '2 BHK', sqft: '980 sq.ft', facing: 'East', price: '₹62L', rera: 'RERA, DTCP & CMDA Approved', status: 'AVAILABLE', img: './assets/image3.jpeg' }
+];
+return items;
+}
+go(i, e) {
+if (e && e.preventDefault) e.preventDefault();
+this.setState({ sel: i });
+try { window.scrollTo(0, 0); } catch (err) {}
+}
+renderVals() {
+var self = this;
+var d = this.data();
+var n = d.length;
+var cur = this.state.sel;
+var idx = cur == null ? 0 : cur;
+return {
+props: d.map(function (p, i) { return Object.assign({}, p, { open: function (e) { self.go(i, e); } }); }),
+sel: d[idx],
+prev: d[(idx - 1 + n) % n],
+next: d[(idx + 1) % n],
+showList: cur == null,
+showDetail: cur != null,
+goList: function (e) { self.go(null, e); },
+goPrev: function (e) { self.go((idx - 1 + n) % n, e); },
+goNext: function (e) { self.go((idx + 1) % n, e); }
+};
+}
+}
+</script>
+</body>
+</html>
